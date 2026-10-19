@@ -1,0 +1,52 @@
+{
+  "horizons": [
+    30,
+    120,
+    480
+  ],
+  "load": 0.85,
+  "mismatch_multipliers": [
+    0.5,
+    1,
+    2
+  ],
+  "purpose": "Finite-run scaling and frozen service-cost sensitivity",
+  "seeds": [
+    20261201,
+    20261202,
+    20261203
+  ],
+  "source": {
+    "files": {
+      "README.md": "6ffc63595ac341a45922bc481d5d01aab4ed79b984f498051c9cf7791ef66454",
+      "VALIDATE.md": "cfa0a65f4f6e38471e7e1d76e0ed937cf67b8b1b970c94ce322772c9ad7cbbad",
+      "docs/EVALUATION.md": "7ed71f2ea8441583074c78364a6e3c597c284067f6bdfa39a9f990a536854a22",
+      "docs/THEORY.md": "d845cec3f54bdfcd842aed5a544cafcdaacf4caac23074ad7d979d6c5dd2ee4d",
+      "docs/UPSTREAM.md": "c1160c87145b131c292b81b8bbcf4fcd9a4252c258111a0445736e1a1aea4b3f",
+      "pyproject.toml": "c1267469dccfa30845773826dec492efedf07e14164611c630ece958babf19b2",
+      "queueing_lab/__init__.py": "bddffcf047d0047167a6853f5f078175b2c51e284be00c1e9cc16288a37f0d20",
+      "queueing_lab/__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "queueing_lab/cli.py": "47d9ee9105ff0fda2110803c2e5c34eae0a0cfa43ab43ccfec1bc5e5e6aec007",
+      "queueing_lab/experiments.py": "2900f43d11bf3fed3300c9c8217e0c2432482540518cfecece1408294b8c1e1b",
+      "queueing_lab/hardware.py": "d41cb3d0eed8bfa60abb3f86328e4f5df6576cd127bb7483c8c1649a5f815cec",
+      "queueing_lab/metrics.py": "c1e8118ddcedd7bcdb9413cce6f397829f0f0336763c798878e1a21b22e29476",
+      "queueing_lab/model.py": "b94c9983a99faeb8120817d2be154ad46d76e0747e57e958a1eab6df50376923",
+      "queueing_lab/network.py": "635d325480a8d4031540cc974038d106a39e7a9b0a6b961b7ecc10c345522042",
+      "queueing_lab/policies.py": "11200465168b1c6f9094a2ab3fd951b3b910d33eecaedd23b544960439dab98f",
+      "queueing_lab/provenance.py": "700bd3d4d7a206792879e2fcf5c1364d70b17c249209567d56db5d72db1d57cc",
+      "queueing_lab/report.py": "db164919705e07c647545d28ede47814a4eacc58d7ac3369786fbe2e33dc6768",
+      "queueing_lab/runtime.py": "d5e1513d6b34500f8955db19628f92836a16a7455c89010eacb5de302174576b",
+      "queueing_lab/simulator.py": "7942a6be3fd45a9c7845b0f1791d5e10a5630c778563bffa7b8eb47947de8c7d",
+      "queueing_lab/workload.py": "4065b062a9d2ad86d267f42faf239fafcd4609be9c2d885e6e0a3ee914fc39a7",
+      "scripts/gpu_batch.py": "7ec5754d224f0a7bca0aa288ffc037095a5348f3d7ff92e2fe3f8c19a0b7a4c2",
+      "scripts/stress_model.py": "1019a29cdc52292d55b95fd213dd0ba6dac62588322036990f9389ff855b1c20",
+      "tests/test_accounting.py": "39341b7f44740ae74a9351b66abfa79b7c81312a3b004b10f6fa7e78e1173dac",
+      "tests/test_model.py": "0e85d5a4eb03e2314e876913d7975668ec5c47dd60955fbd6a18eeb296d1beae",
+      "tests/test_runtime.py": "7af01c1449c869f0a7683dd86c45aa94c21d87590dc1498e166b44537b65f536",
+      "tests/test_simulation.py": "a6da76c0d64e6c1cd86a59ae24e9e77efea916421f1e7755b991ca32572ba437"
+    },
+    "git_head": null,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.11.11 (main, Apr 18 2026, 15:24:50) [Clang 16.0.0 (clang-1600.0.26.6)]"
+  }
+}

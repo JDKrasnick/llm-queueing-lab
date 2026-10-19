@@ -1,0 +1,128 @@
+{
+  "kv16_rows8": {
+    "action_a": [
+      1,
+      0
+    ],
+    "action_b": [
+      0,
+      4
+    ],
+    "actions": 5,
+    "config": {
+      "attention_token_s": 1.5e-07,
+      "block_size": 64,
+      "blocks": 16,
+      "classes": [
+        {
+          "name": "prefill",
+          "output_bound": 32,
+          "output_tokens": 16,
+          "prompt_tokens": 768
+        },
+        {
+          "name": "decode",
+          "output_bound": 160,
+          "output_tokens": 128,
+          "prompt_tokens": 64
+        }
+      ],
+      "decode_row_s": 0.00012,
+      "decode_step_s": 0.0015,
+      "prefill_token_s": 1.5e-05,
+      "rows": 8,
+      "setup_s": 0.001
+    },
+    "monotone": true,
+    "requests_s": 19.033226303157416,
+    "service_rates": [
+      9.51661315157871,
+      9.516613151578708
+    ],
+    "time_fraction_a": 0.36701770280378454
+  },
+  "kv32_rows8": {
+    "action_a": [
+      0,
+      8
+    ],
+    "action_b": [
+      2,
+      0
+    ],
+    "actions": 15,
+    "config": {
+      "attention_token_s": 1.5e-07,
+      "block_size": 64,
+      "blocks": 32,
+      "classes": [
+        {
+          "name": "prefill",
+          "output_bound": 32,
+          "output_tokens": 16,
+          "prompt_tokens": 768
+        },
+        {
+          "name": "decode",
+          "output_bound": 160,
+          "output_tokens": 128,
+          "prompt_tokens": 64
+        }
+      ],
+      "decode_row_s": 0.00012,
+      "decode_step_s": 0.0015,
+      "prefill_token_s": 1.5e-05,
+      "rows": 8,
+      "setup_s": 0.001
+    },
+    "monotone": true,
+    "requests_s": 28.821807732602796,
+    "service_rates": [
+      14.4109038663014,
+      14.410903866301398
+    ],
+    "time_fraction_a": 0.6135572019212617
+  },
+  "kv64_rows4": {
+    "action_a": [
+      4,
+      0
+    ],
+    "action_b": [
+      0,
+      4
+    ],
+    "actions": 14,
+    "config": {
+      "attention_token_s": 1.5e-07,
+      "block_size": 64,
+      "blocks": 64,
+      "classes": [
+        {
+          "name": "prefill",
+          "output_bound": 32,
+          "output_tokens": 16,
+          "prompt_tokens": 768
+        },
+        {
+          "name": "decode",
+          "output_bound": 160,
+          "output_tokens": 128,
+          "prompt_tokens": 64
+        }
+      ],
+      "decode_row_s": 0.00012,
+      "decode_step_s": 0.0015,
+      "prefill_token_s": 1.5e-05,
+      "rows": 4,
+      "setup_s": 0.001
+    },
+    "monotone": true,
+    "requests_s": 22.869060904882996,
+    "service_rates": [
+      11.434530452441498,
+      11.434530452441498
+    ],
+    "time_fraction_a": 0.23945050220457748
+  }
+}

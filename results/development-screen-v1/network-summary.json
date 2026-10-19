@@ -1,0 +1,632 @@
+[
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 402,
+      "completion_rate_s": 13.4,
+      "offered_roots": 428,
+      "restricted_mean_response_s": 2.587780015721465,
+      "root_queue_area_s": 1107.569846728787,
+      "unfinished_roots": 26
+    },
+    "policy": "fcfs",
+    "rate": 14.410903866301398,
+    "seed": 20261021
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 417,
+      "completion_rate_s": 13.9,
+      "offered_roots": 428,
+      "restricted_mean_response_s": 0.7350927392141255,
+      "root_queue_area_s": 314.6196923836457,
+      "unfinished_roots": 11
+    },
+    "policy": "pressure",
+    "rate": 14.410903866301398,
+    "seed": 20261021
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 417,
+      "completion_rate_s": 13.9,
+      "offered_roots": 428,
+      "restricted_mean_response_s": 0.7980273865628388,
+      "root_queue_area_s": 341.555721448895,
+      "unfinished_roots": 11
+    },
+    "policy": "backpressure",
+    "rate": 14.410903866301398,
+    "seed": 20261021
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 402,
+      "completion_rate_s": 13.4,
+      "offered_roots": 714,
+      "restricted_mean_response_s": 7.469257819756717,
+      "root_queue_area_s": 5333.050083306296,
+      "unfinished_roots": 312
+    },
+    "policy": "fcfs",
+    "rate": 24.498536572712375,
+    "seed": 20261021
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 698,
+      "completion_rate_s": 23.266666666666666,
+      "offered_roots": 714,
+      "restricted_mean_response_s": 1.0361511173918876,
+      "root_queue_area_s": 739.8118978178077,
+      "unfinished_roots": 16
+    },
+    "policy": "pressure",
+    "rate": 24.498536572712375,
+    "seed": 20261021
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 687,
+      "completion_rate_s": 22.9,
+      "offered_roots": 714,
+      "restricted_mean_response_s": 1.4165839944918004,
+      "root_queue_area_s": 1011.4409720671455,
+      "unfinished_roots": 27
+    },
+    "policy": "backpressure",
+    "rate": 24.498536572712375,
+    "seed": 20261021
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 403,
+      "completion_rate_s": 13.433333333333334,
+      "offered_roots": 895,
+      "restricted_mean_response_s": 8.684219005332585,
+      "root_queue_area_s": 7772.376009772663,
+      "unfinished_roots": 492
+    },
+    "policy": "fcfs",
+    "rate": 30.262898119232936,
+    "seed": 20261021
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 847,
+      "completion_rate_s": 28.233333333333334,
+      "offered_roots": 895,
+      "restricted_mean_response_s": 1.4161422537843955,
+      "root_queue_area_s": 1267.447317137034,
+      "unfinished_roots": 48
+    },
+    "policy": "pressure",
+    "rate": 30.262898119232936,
+    "seed": 20261021
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 831,
+      "completion_rate_s": 27.7,
+      "offered_roots": 895,
+      "restricted_mean_response_s": 1.6667245408420477,
+      "root_queue_area_s": 1491.7184640536327,
+      "unfinished_roots": 64
+    },
+    "policy": "backpressure",
+    "rate": 30.262898119232936,
+    "seed": 20261021
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 409,
+      "completion_rate_s": 13.633333333333333,
+      "offered_roots": 460,
+      "restricted_mean_response_s": 2.381796779380243,
+      "root_queue_area_s": 1095.6265185149118,
+      "unfinished_roots": 51
+    },
+    "policy": "fcfs",
+    "rate": 14.410903866301398,
+    "seed": 20261022
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 449,
+      "completion_rate_s": 14.966666666666667,
+      "offered_roots": 460,
+      "restricted_mean_response_s": 0.7769637727074887,
+      "root_queue_area_s": 357.40333544544484,
+      "unfinished_roots": 11
+    },
+    "policy": "pressure",
+    "rate": 14.410903866301398,
+    "seed": 20261022
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 447,
+      "completion_rate_s": 14.9,
+      "offered_roots": 460,
+      "restricted_mean_response_s": 0.8644051475978555,
+      "root_queue_area_s": 397.6263678950135,
+      "unfinished_roots": 13
+    },
+    "policy": "backpressure",
+    "rate": 14.410903866301398,
+    "seed": 20261022
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 411,
+      "completion_rate_s": 13.7,
+      "offered_roots": 773,
+      "restricted_mean_response_s": 7.4826486305806545,
+      "root_queue_area_s": 5784.087391438846,
+      "unfinished_roots": 362
+    },
+    "policy": "fcfs",
+    "rate": 24.498536572712375,
+    "seed": 20261022
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 741,
+      "completion_rate_s": 24.7,
+      "offered_roots": 773,
+      "restricted_mean_response_s": 1.15175624309127,
+      "root_queue_area_s": 890.3075759095517,
+      "unfinished_roots": 32
+    },
+    "policy": "pressure",
+    "rate": 24.498536572712375,
+    "seed": 20261022
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 727,
+      "completion_rate_s": 24.233333333333334,
+      "offered_roots": 773,
+      "restricted_mean_response_s": 1.4667720394886576,
+      "root_queue_area_s": 1133.8147865247324,
+      "unfinished_roots": 46
+    },
+    "policy": "backpressure",
+    "rate": 24.498536572712375,
+    "seed": 20261022
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 411,
+      "completion_rate_s": 13.7,
+      "offered_roots": 960,
+      "restricted_mean_response_s": 8.838388660381069,
+      "root_queue_area_s": 8484.853113965826,
+      "unfinished_roots": 549
+    },
+    "policy": "fcfs",
+    "rate": 30.262898119232936,
+    "seed": 20261022
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 832,
+      "completion_rate_s": 27.733333333333334,
+      "offered_roots": 960,
+      "restricted_mean_response_s": 2.49855428356682,
+      "root_queue_area_s": 2398.6121122241475,
+      "unfinished_roots": 128
+    },
+    "policy": "pressure",
+    "rate": 30.262898119232936,
+    "seed": 20261022
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 829,
+      "completion_rate_s": 27.633333333333333,
+      "offered_roots": 960,
+      "restricted_mean_response_s": 2.656568882797879,
+      "root_queue_area_s": 2550.3061274859638,
+      "unfinished_roots": 131
+    },
+    "policy": "backpressure",
+    "rate": 30.262898119232936,
+    "seed": 20261022
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 408,
+      "completion_rate_s": 13.6,
+      "offered_roots": 443,
+      "restricted_mean_response_s": 1.5802078268681723,
+      "root_queue_area_s": 700.0320673026004,
+      "unfinished_roots": 35
+    },
+    "policy": "fcfs",
+    "rate": 14.410903866301398,
+    "seed": 20261023
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 434,
+      "completion_rate_s": 14.466666666666667,
+      "offered_roots": 443,
+      "restricted_mean_response_s": 0.7620198999286848,
+      "root_queue_area_s": 337.5748156684074,
+      "unfinished_roots": 9
+    },
+    "policy": "pressure",
+    "rate": 14.410903866301398,
+    "seed": 20261023
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 431,
+      "completion_rate_s": 14.366666666666667,
+      "offered_roots": 443,
+      "restricted_mean_response_s": 0.8419704097515914,
+      "root_queue_area_s": 372.992891519955,
+      "unfinished_roots": 12
+    },
+    "policy": "backpressure",
+    "rate": 14.410903866301398,
+    "seed": 20261023
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 404,
+      "completion_rate_s": 13.466666666666667,
+      "offered_roots": 751,
+      "restricted_mean_response_s": 7.266812274898914,
+      "root_queue_area_s": 5457.376018449085,
+      "unfinished_roots": 347
+    },
+    "policy": "fcfs",
+    "rate": 24.498536572712375,
+    "seed": 20261023
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 718,
+      "completion_rate_s": 23.933333333333334,
+      "offered_roots": 751,
+      "restricted_mean_response_s": 1.0568587528659483,
+      "root_queue_area_s": 793.7009234023272,
+      "unfinished_roots": 33
+    },
+    "policy": "pressure",
+    "rate": 24.498536572712375,
+    "seed": 20261023
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 701,
+      "completion_rate_s": 23.366666666666667,
+      "offered_roots": 751,
+      "restricted_mean_response_s": 1.4412691659550547,
+      "root_queue_area_s": 1082.3931436322462,
+      "unfinished_roots": 50
+    },
+    "policy": "backpressure",
+    "rate": 24.498536572712375,
+    "seed": 20261023
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 404,
+      "completion_rate_s": 13.466666666666667,
+      "offered_roots": 908,
+      "restricted_mean_response_s": 8.842268452285676,
+      "root_queue_area_s": 8028.7797546753945,
+      "unfinished_roots": 504
+    },
+    "policy": "fcfs",
+    "rate": 30.262898119232936,
+    "seed": 20261023
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 843,
+      "completion_rate_s": 28.1,
+      "offered_roots": 908,
+      "restricted_mean_response_s": 1.9288742834512669,
+      "root_queue_area_s": 1751.4178493737504,
+      "unfinished_roots": 65
+    },
+    "policy": "pressure",
+    "rate": 30.262898119232936,
+    "seed": 20261023
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 830,
+      "completion_rate_s": 27.666666666666668,
+      "offered_roots": 908,
+      "restricted_mean_response_s": 2.23182871750775,
+      "root_queue_area_s": 2026.5004754970369,
+      "unfinished_roots": 78
+    },
+    "policy": "backpressure",
+    "rate": 30.262898119232936,
+    "seed": 20261023
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 406,
+      "completion_rate_s": 13.533333333333333,
+      "offered_roots": 455,
+      "restricted_mean_response_s": 2.0260907435697315,
+      "root_queue_area_s": 921.8712883242279,
+      "unfinished_roots": 49
+    },
+    "policy": "fcfs",
+    "rate": 14.410903866301398,
+    "seed": 20261024
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 443,
+      "completion_rate_s": 14.766666666666667,
+      "offered_roots": 455,
+      "restricted_mean_response_s": 0.7650143883615831,
+      "root_queue_area_s": 348.0815467045203,
+      "unfinished_roots": 12
+    },
+    "policy": "pressure",
+    "rate": 14.410903866301398,
+    "seed": 20261024
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 443,
+      "completion_rate_s": 14.766666666666667,
+      "offered_roots": 455,
+      "restricted_mean_response_s": 0.8461442831969311,
+      "root_queue_area_s": 384.99564885460364,
+      "unfinished_roots": 12
+    },
+    "policy": "backpressure",
+    "rate": 14.410903866301398,
+    "seed": 20261024
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 407,
+      "completion_rate_s": 13.566666666666666,
+      "offered_roots": 755,
+      "restricted_mean_response_s": 7.272334109330536,
+      "root_queue_area_s": 5490.612252544554,
+      "unfinished_roots": 348
+    },
+    "policy": "fcfs",
+    "rate": 24.498536572712375,
+    "seed": 20261024
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 734,
+      "completion_rate_s": 24.466666666666665,
+      "offered_roots": 755,
+      "restricted_mean_response_s": 1.099020158637044,
+      "root_queue_area_s": 829.7602197709683,
+      "unfinished_roots": 21
+    },
+    "policy": "pressure",
+    "rate": 24.498536572712375,
+    "seed": 20261024
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 718,
+      "completion_rate_s": 23.933333333333334,
+      "offered_roots": 755,
+      "restricted_mean_response_s": 1.4427940509690127,
+      "root_queue_area_s": 1089.3095084816046,
+      "unfinished_roots": 37
+    },
+    "policy": "backpressure",
+    "rate": 24.498536572712375,
+    "seed": 20261024
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 408,
+      "completion_rate_s": 13.6,
+      "offered_roots": 928,
+      "restricted_mean_response_s": 8.729089359269118,
+      "root_queue_area_s": 8100.594925401741,
+      "unfinished_roots": 520
+    },
+    "policy": "fcfs",
+    "rate": 30.262898119232936,
+    "seed": 20261024
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 839,
+      "completion_rate_s": 27.966666666666665,
+      "offered_roots": 928,
+      "restricted_mean_response_s": 2.115730702758662,
+      "root_queue_area_s": 1963.3980921600385,
+      "unfinished_roots": 89
+    },
+    "policy": "pressure",
+    "rate": 30.262898119232936,
+    "seed": 20261024
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 833,
+      "completion_rate_s": 27.766666666666666,
+      "offered_roots": 928,
+      "restricted_mean_response_s": 2.2317829521752426,
+      "root_queue_area_s": 2071.094579618625,
+      "unfinished_roots": 95
+    },
+    "policy": "backpressure",
+    "rate": 30.262898119232936,
+    "seed": 20261024
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 407,
+      "completion_rate_s": 13.566666666666666,
+      "offered_roots": 443,
+      "restricted_mean_response_s": 1.7971131891213334,
+      "root_queue_area_s": 796.1211427807507,
+      "unfinished_roots": 36
+    },
+    "policy": "fcfs",
+    "rate": 14.410903866301398,
+    "seed": 20261025
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 436,
+      "completion_rate_s": 14.533333333333333,
+      "offered_roots": 443,
+      "restricted_mean_response_s": 0.7879417869377213,
+      "root_queue_area_s": 349.05821161341055,
+      "unfinished_roots": 7
+    },
+    "policy": "pressure",
+    "rate": 14.410903866301398,
+    "seed": 20261025
+  },
+  {
+    "load": 0.5,
+    "metrics": {
+      "completed_roots": 436,
+      "completion_rate_s": 14.533333333333333,
+      "offered_roots": 443,
+      "restricted_mean_response_s": 0.8576187658494847,
+      "root_queue_area_s": 379.9251132713217,
+      "unfinished_roots": 7
+    },
+    "policy": "backpressure",
+    "rate": 14.410903866301398,
+    "seed": 20261025
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 415,
+      "completion_rate_s": 13.833333333333334,
+      "offered_roots": 783,
+      "restricted_mean_response_s": 6.849972998275802,
+      "root_queue_area_s": 5363.528857649952,
+      "unfinished_roots": 368
+    },
+    "policy": "fcfs",
+    "rate": 24.498536572712375,
+    "seed": 20261025
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 744,
+      "completion_rate_s": 24.8,
+      "offered_roots": 783,
+      "restricted_mean_response_s": 1.1335561353258654,
+      "root_queue_area_s": 887.5744539601526,
+      "unfinished_roots": 39
+    },
+    "policy": "pressure",
+    "rate": 24.498536572712375,
+    "seed": 20261025
+  },
+  {
+    "load": 0.85,
+    "metrics": {
+      "completed_roots": 733,
+      "completion_rate_s": 24.433333333333334,
+      "offered_roots": 783,
+      "restricted_mean_response_s": 1.40821658668079,
+      "root_queue_area_s": 1102.6335873710586,
+      "unfinished_roots": 50
+    },
+    "policy": "backpressure",
+    "rate": 24.498536572712375,
+    "seed": 20261025
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 415,
+      "completion_rate_s": 13.833333333333334,
+      "offered_roots": 947,
+      "restricted_mean_response_s": 8.59486568620277,
+      "root_queue_area_s": 8139.337804834024,
+      "unfinished_roots": 532
+    },
+    "policy": "fcfs",
+    "rate": 30.262898119232936,
+    "seed": 20261025
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 823,
+      "completion_rate_s": 27.433333333333334,
+      "offered_roots": 947,
+      "restricted_mean_response_s": 2.4980569423855052,
+      "root_queue_area_s": 2365.6599244390736,
+      "unfinished_roots": 124
+    },
+    "policy": "pressure",
+    "rate": 30.262898119232936,
+    "seed": 20261025
+  },
+  {
+    "load": 1.05,
+    "metrics": {
+      "completed_roots": 820,
+      "completion_rate_s": 27.333333333333332,
+      "offered_roots": 947,
+      "restricted_mean_response_s": 2.6320803001219675,
+      "root_queue_area_s": 2492.580044215503,
+      "unfinished_roots": 127
+    },
+    "policy": "backpressure",
+    "rate": 30.262898119232936,
+    "seed": 20261025
+  }
+]

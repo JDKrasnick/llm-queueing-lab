@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/content/llm-queueing-lab/queueing_lab/__main__.py", line 3, in <module>
+    main()
+    ~~~~^^
+  File "/content/llm-queueing-lab/queueing_lab/cli.py", line 54, in main
+    calibrate(args.model,Config.from_dict(json.loads(Path(args.config).read_text())),args.output,args.reps,args.provider)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/llm-queueing-lab/queueing_lab/hardware.py", line 138, in calibrate
+    session = GenAISession(model,config,provider)
+  File "/content/llm-queueing-lab/queueing_lab/hardware.py", line 29, in __init__
+    og.register_execution_provider_library(ep.get_ep_name(),ep.get_library_path())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Failed to register execution provider library 'CUDAExecutionProvider'. Error loading "/usr/local/lib/python3.13/dist-packages/onnxruntime_ep_cuda/libonnxruntime_providers_cuda.so": libcudart.so.12: cannot open shared object file: No such file or directory The required hardware or driver may be unavailable (for example, a GPU that has been removed or disabled).

@@ -1,0 +1,24 @@
+{
+  "attention_token_s": 1.5e-07,
+  "block_size": 256,
+  "blocks": 16,
+  "classes": [
+    {
+      "name": "prefill",
+      "output_bound": 32,
+      "output_tokens": 16,
+      "prompt_tokens": 769
+    },
+    {
+      "name": "decode",
+      "output_bound": 128,
+      "output_tokens": 96,
+      "prompt_tokens": 65
+    }
+  ],
+  "decode_row_s": 0.00012,
+  "decode_step_s": 0.0015,
+  "prefill_token_s": 1.5e-05,
+  "rows": 4,
+  "setup_s": 0.001
+}

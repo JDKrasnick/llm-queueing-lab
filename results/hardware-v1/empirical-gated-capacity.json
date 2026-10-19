@@ -1,0 +1,18 @@
+{
+  "action_a": [
+    0,
+    4
+  ],
+  "action_b": [
+    4,
+    0
+  ],
+  "monotone": true,
+  "requests_s": 19.95868718917459,
+  "service_rates": [
+    9.979343594587297,
+    9.979343594587295
+  ],
+  "time_fraction_a": 0.6681676900895216,
+  "warning": "Empirical gated service-rate hull, not native Engine capacity or a stability proof"
+}

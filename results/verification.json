@@ -1,0 +1,33 @@
+{
+  "baseline_source": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+  "complete_output_pairs": 2783,
+  "figure_visual_review": [
+    "synthetic throughput",
+    "class fairness",
+    "actual hardware"
+  ],
+  "frozen_replay": {
+    "exact_summary_match": true,
+    "network": 45,
+    "single_station": 360
+  },
+  "git_diff_check": true,
+  "gpu_completed": 3771,
+  "gpu_executed_source_files_verified": 15,
+  "gpu_offered": 4176,
+  "gpu_unfinished_at_horizon": 405,
+  "hosted_ci_run": false,
+  "isolated_editable_install": true,
+  "limits": "Model theorem awaits independent mathematical review; GPU diagnostic does not establish general serving improvement.",
+  "measured_gpu_jobs": 24,
+  "notebook_code_cells_executed": true,
+  "output_mismatches": 0,
+  "python": "3.11.11",
+  "stress_runs": 36,
+  "test_results": "test-results.xml",
+  "tests_passed": 23,
+  "wheel_build": true,
+  "wheel_installed_and_imported_outside_checkout": true,
+  "wheel_modules_byte_match_current_source": true,
+  "wheel_sha256": "17354d76af352342da4d2fc52fb276e52ed7432517e6fd5cf210bc8011fe1cd6"
+}

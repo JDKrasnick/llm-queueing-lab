@@ -1,0 +1,2 @@
+# Preserve the exact bytes and hashes of executed GPU source, including EOFs.
+results/hardware-v1/source/** whitespace=-blank-at-eof

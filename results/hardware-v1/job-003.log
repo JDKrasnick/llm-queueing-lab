@@ -1,0 +1,28 @@
+{
+  "offered": 113,
+  "completed": 112,
+  "unfinished": 1,
+  "completion_rate_s": 9.333333333333334,
+  "restricted_mean_response_s": 0.3050536677788437,
+  "queue_area_request_s": 34.47106445900934,
+  "observed_mean_ttft_s": 0.15408522026556418,
+  "ttft_observed": 113,
+  "ttft_censored": 0,
+  "observed_p99_gap_s": 0.0040361662511713805,
+  "gap_count": 6246,
+  "backlog_tail_slope_s": -0.01586462189317822,
+  "per_class": {
+    "0": {
+      "offered": 55,
+      "completed": 55,
+      "unfinished": 0,
+      "restricted_mean_response_s": 0.20677840753303217
+    },
+    "1": {
+      "offered": 58,
+      "completed": 57,
+      "unfinished": 1,
+      "restricted_mean_response_s": 0.3982457249084926
+    }
+  }
+}

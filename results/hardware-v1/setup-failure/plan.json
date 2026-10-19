@@ -1,0 +1,70 @@
+{
+  "arms": [
+    "native",
+    "native_aa",
+    "fcfs",
+    "pressure"
+  ],
+  "calibration_reps": 2,
+  "config": {
+    "attention_token_s": 1.5e-07,
+    "block_size": 256,
+    "blocks": 16,
+    "classes": [
+      {
+        "name": "prefill",
+        "output_bound": 32,
+        "output_tokens": 16,
+        "prompt_tokens": 769
+      },
+      {
+        "name": "decode",
+        "output_bound": 128,
+        "output_tokens": 96,
+        "prompt_tokens": 65
+      }
+    ],
+    "decode_row_s": 0.00012,
+    "decode_step_s": 0.0015,
+    "prefill_token_s": 1.5e-05,
+    "rows": 4,
+    "setup_s": 0.001
+  },
+  "gpu": "name, uuid, driver_version\nNVIDIA L4, GPU-214f0a61-9e87-e1ef-3e71-c8cc2a1858ee, 580.82.07\n",
+  "horizon_s": 12,
+  "loads": [
+    0.5,
+    0.85,
+    1.05
+  ],
+  "model": "/content/planner-qwen-paged",
+  "package": "/content/planner-baseline-package",
+  "purpose": "Gated model transfer and native continuous-admission control; not always-on cap validation",
+  "schema": 1,
+  "seeds": [
+    20261101,
+    20261102
+  ],
+  "source": {
+    "files": {
+      "queueing_lab/__init__.py": "bddffcf047d0047167a6853f5f078175b2c51e284be00c1e9cc16288a37f0d20",
+      "queueing_lab/__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+      "queueing_lab/cli.py": "47d9ee9105ff0fda2110803c2e5c34eae0a0cfa43ab43ccfec1bc5e5e6aec007",
+      "queueing_lab/experiments.py": "0b2d56d33dc1ea478eb631908d443bb05ad82bedfa8f2e11d96d0f94cec245ea",
+      "queueing_lab/hardware.py": "7c7cd0dcf3ced96c4a0455fd90f5a0a93d477a3f2e3f1355b254839a7d787618",
+      "queueing_lab/metrics.py": "4de1aba99db78500fb7fdf4c38aa6921bdcce193f404d50fa7eb63931a4cefee",
+      "queueing_lab/model.py": "b94c9983a99faeb8120817d2be154ad46d76e0747e57e958a1eab6df50376923",
+      "queueing_lab/network.py": "635d325480a8d4031540cc974038d106a39e7a9b0a6b961b7ecc10c345522042",
+      "queueing_lab/policies.py": "11200465168b1c6f9094a2ab3fd951b3b910d33eecaedd23b544960439dab98f",
+      "queueing_lab/provenance.py": "9d85fc5dd22258624d4d1bf7e26824229363c8d5867d770cf76b30e4e35c84f5",
+      "queueing_lab/report.py": "0dba7a8550cd290f904a3f292f6337d69197d1c884377d9869211c9e96d4d37b",
+      "queueing_lab/runtime.py": "d5e1513d6b34500f8955db19628f92836a16a7455c89010eacb5de302174576b",
+      "queueing_lab/simulator.py": "815d1d5a7e58c14cdad08252e40d74adda42b0a8e2bdd38c74a239f77ea3f88b",
+      "queueing_lab/workload.py": "4065b062a9d2ad86d267f42faf239fafcd4609be9c2d885e6e0a3ee914fc39a7",
+      "scripts/gpu_batch.py": "1d62da1928428e38fa40f38a12e8461fdee017983a52badd48dba6bcb3d7dd94"
+    },
+    "git_head": null,
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]"
+  }
+}
