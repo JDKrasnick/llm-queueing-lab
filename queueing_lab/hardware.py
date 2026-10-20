@@ -21,7 +21,7 @@ from .workload import generate, trace_hash
 class GenAISession:
     label = "onnxruntime-genai-engine"
 
-    def __init__(self, model_dir, config, provider="cuda", native_budget=2048):
+    def __init__(self, model_dir, config, provider="cuda", native_budget=2048, prefix_caching=False, cheapest_prefill_first=False):
         import numpy as np
         import onnxruntime_genai as og
         try:
@@ -40,7 +40,9 @@ class GenAISession:
             if key.startswith("prefill_") or key in ("cheapest_prefill_first","gpu_utilization_factor"):
                 db.pop(key)
         db.update(num_blocks=config.blocks,max_batch_size=config.rows,
-                  max_scheduled_tokens=native_budget,prefix_caching=False)
+                  max_scheduled_tokens=native_budget,prefix_caching=prefix_caching)
+        if cheapest_prefill_first:
+            db['cheapest_prefill_first']=True
         self.temp = tempfile.TemporaryDirectory(prefix="queueing-model-")
         variant = Path(self.temp.name)
         for entry in source.iterdir():

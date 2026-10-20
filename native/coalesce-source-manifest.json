@@ -1,0 +1,55 @@
+{
+  "base": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+  "files": {
+    "src/config.cpp": {
+      "allowed_before": [
+        "1185e21a1ad053146830c21cdf30ff9b2220c1bf9e4a3352f33c2b6281372e9f",
+        "233a3397149e8505ea7b752cbb956fd5d876ef7c8841b51cf775ce3d3298b4e7"
+      ],
+      "after": "233a3397149e8505ea7b752cbb956fd5d876ef7c8841b51cf775ce3d3298b4e7"
+    },
+    "src/config.h": {
+      "allowed_before": [
+        "18a465dec2ff46cdbe391f5c89924dc2b52b91d5e3178af435c05ab96d2888e4",
+        "d7b184f018937d9878f942efcfb37313e6722ac25d9532b3d9d358f4dee34c71"
+      ],
+      "after": "d7b184f018937d9878f942efcfb37313e6722ac25d9532b3d9d358f4dee34c71"
+    },
+    "src/engine/scheduler.cpp": {
+      "allowed_before": [
+        "1742b406babf22cf580150db64127f3593b0b5c00a182221120e33659b8ec616",
+        "9a508e84ceed90085bf869854f49b9e8514576adfeb09c09e7b79915383b45fd",
+        "b56603f632ec7539b0408fcc067eadcabe458cfe3654bbe7b68273a91bc328a6"
+      ],
+      "after": "d84b82ad18c213be360dfc36189fa2d086d8f226d16cb3f6b1c072083803bd2f"
+    },
+    "src/engine/scheduler.h": {
+      "allowed_before": [
+        "53fba0fde1ba714a198c2997a16fd08360387d250308cc84eb9dd4076b2cd13e",
+        "cbc3d2efe88493c57bbc2a6dd748857f9ca0ec293a1e720b1f9cddb33c17ba50"
+      ],
+      "after": "53fba0fde1ba714a198c2997a16fd08360387d250308cc84eb9dd4076b2cd13e"
+    },
+    "test/cpp/engine/dynamic_batching_config_tests.cpp": {
+      "allowed_before": [
+        "3d5e24111220359cbadcebb1c4f954fa55c3df0d558f807d9fbe2cd2098e25b8",
+        "b9df55abadb38245d0493b76f5dddf5dfa5b1fea68ab5ba2c8ee08ca17070edb"
+      ],
+      "after": "3d5e24111220359cbadcebb1c4f954fa55c3df0d558f807d9fbe2cd2098e25b8"
+    },
+    "test/cpp/engine/scheduler_contract_tests.cpp": {
+      "allowed_before": [
+        "015973fc0588cdbbbd552f9f0bfd41e316a8f0ba286b834d28d256bb7be785e0",
+        "33e4abfb0d7be45a9871c99de908ca2a2a04d855d27939f1812cd35ce77a1d33"
+      ],
+      "after": "015973fc0588cdbbbd552f9f0bfd41e316a8f0ba286b834d28d256bb7be785e0"
+    },
+    "src/engine/research_cache_policy.h": {
+      "allowed_before": [
+        "589fdd9d29adbdbafc438790bee003546a976b10875ba71cb2e03304a45326ec"
+      ],
+      "after": "d41cf0f835e4e95d8d04e1196d06042ca351a4f543e5f6b0dc0f0fdb885939cf"
+    }
+  },
+  "hypothesis": "Coalesce exact queued cold prefixes until one native leader publishes reusable blocks; no outer gate."
+}

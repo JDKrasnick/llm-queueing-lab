@@ -1,0 +1,22 @@
+{
+  "archive": "cache-rl-complete.zip",
+  "archive_sha256": "b1eb3a223e5ae73de571166f9cf57cca45d494bf28e83d5ef5bc76c395037ad2",
+  "jobs": 124,
+  "offered": 7936,
+  "completed": 7936,
+  "matched_complete_outputs": 4352,
+  "output_errors": 0,
+  "native_actor_probabilities_verified": 1808,
+  "training_action_counts": [
+    726,
+    763,
+    319
+  ],
+  "full_engine_tests": {
+    "passed": 927,
+    "skipped": 1,
+    "disabled": 4
+  },
+  "focused_engine_tests": 48,
+  "max_individual_delay_is_not_hidden": true
+}

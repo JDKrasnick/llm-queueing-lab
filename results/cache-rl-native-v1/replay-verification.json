@@ -1,0 +1,9 @@
+{
+  "all_measured_returns_match": true,
+  "all_saved_weights_match": true,
+  "episodes_replayed": 24,
+  "frozen_actor_matches": true,
+  "native_steps": 1808,
+  "train_holdout_seeds_disjoint": true,
+  "updates_reproduced": 6
+}

@@ -1,0 +1,121 @@
+{
+  "actions": [
+    "FIFO",
+    "shortest uncached prefill",
+    "marginal cache/group ordering"
+  ],
+  "blocks": [
+    32,
+    128
+  ],
+  "episodes_per_update": 4,
+  "families": [
+    "reuse",
+    "churn",
+    "phase",
+    "no_prefix"
+  ],
+  "frozen_native_source": {
+    "manifest": {
+      "base": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+      "files": {
+        "src/config.cpp": {
+          "after": "233a3397149e8505ea7b752cbb956fd5d876ef7c8841b51cf775ce3d3298b4e7",
+          "allowed_before": [
+            "1185e21a1ad053146830c21cdf30ff9b2220c1bf9e4a3352f33c2b6281372e9f",
+            "233a3397149e8505ea7b752cbb956fd5d876ef7c8841b51cf775ce3d3298b4e7"
+          ]
+        },
+        "src/config.h": {
+          "after": "d7b184f018937d9878f942efcfb37313e6722ac25d9532b3d9d358f4dee34c71",
+          "allowed_before": [
+            "18a465dec2ff46cdbe391f5c89924dc2b52b91d5e3178af435c05ab96d2888e4",
+            "d7b184f018937d9878f942efcfb37313e6722ac25d9532b3d9d358f4dee34c71"
+          ]
+        },
+        "src/engine/research_cache_policy.h": {
+          "after": "589fdd9d29adbdbafc438790bee003546a976b10875ba71cb2e03304a45326ec",
+          "allowed_before": []
+        },
+        "src/engine/scheduler.cpp": {
+          "after": "1742b406babf22cf580150db64127f3593b0b5c00a182221120e33659b8ec616",
+          "allowed_before": [
+            "1742b406babf22cf580150db64127f3593b0b5c00a182221120e33659b8ec616",
+            "9a508e84ceed90085bf869854f49b9e8514576adfeb09c09e7b79915383b45fd",
+            "b56603f632ec7539b0408fcc067eadcabe458cfe3654bbe7b68273a91bc328a6"
+          ]
+        },
+        "src/engine/scheduler.h": {
+          "after": "53fba0fde1ba714a198c2997a16fd08360387d250308cc84eb9dd4076b2cd13e",
+          "allowed_before": [
+            "53fba0fde1ba714a198c2997a16fd08360387d250308cc84eb9dd4076b2cd13e",
+            "cbc3d2efe88493c57bbc2a6dd748857f9ca0ec293a1e720b1f9cddb33c17ba50"
+          ]
+        },
+        "test/cpp/engine/dynamic_batching_config_tests.cpp": {
+          "after": "3d5e24111220359cbadcebb1c4f954fa55c3df0d558f807d9fbe2cd2098e25b8",
+          "allowed_before": [
+            "3d5e24111220359cbadcebb1c4f954fa55c3df0d558f807d9fbe2cd2098e25b8",
+            "b9df55abadb38245d0493b76f5dddf5dfa5b1fea68ab5ba2c8ee08ca17070edb"
+          ]
+        },
+        "test/cpp/engine/scheduler_contract_tests.cpp": {
+          "after": "015973fc0588cdbbbd552f9f0bfd41e316a8f0ba286b834d28d256bb7be785e0",
+          "allowed_before": [
+            "015973fc0588cdbbbd552f9f0bfd41e316a8f0ba286b834d28d256bb7be785e0",
+            "33e4abfb0d7be45a9871c99de908ca2a2a04d855d27939f1812cd35ce77a1d33"
+          ]
+        }
+      }
+    },
+    "package": "/content/cache-rl-package",
+    "source_base": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+    "wheel_sha256": "112bdf7820015a63ec3c1a92b0d1d9fe4b588cd7aefbaa1eccb62650c0d37efb"
+  },
+  "holdout_seeds": [
+    20262201,
+    20262202
+  ],
+  "horizon_s": 6,
+  "python_source": {
+    "files": {
+      "cache_rl/__init__.py": "b501838fb092828d1ddbc83eec8548cef5ca6d32ba101acb128ea0ecb4ea31fc",
+      "cache_rl/build_gpu.py": "35efcaa70bb32a87eeef393c82fbad4021951dba9e4f6400f81269239239801e",
+      "cache_rl/driver.py": "ac0832da038e4a3c6f141ad3fd8e1c1ac694c67ce01f0ad54ddeb8c839a4345f",
+      "cache_rl/harness.py": "6f28ead1ba126d448ab3b3e6b7c952eda48bd1a204b07af40d12952e8fda2e26",
+      "cache_rl/learning.py": "1ed0b85a73ef56f0a26b9c322489edcd95466fdff2cfaaff6d10e50d414574c3",
+      "native/source-manifest.json": "3129ca6281bd636f6efcf35da05e4e80832744135e8cc869a24d6050de2dd3f1",
+      "queueing_lab/__init__.py": "30273a940ce355e513c9dcf78f48076ac252d8ed7c713e4d197aee7bcf7b4380",
+      "queueing_lab/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "queueing_lab/cli.py": "d778e63b47e00b9a064822e6cb76ca3b33cbd29411787d1b694ac8b163f8ad6c",
+      "queueing_lab/experiments.py": "ea7d827a1a6efcee0ef744a9c86e24c80e0a2e85f0db07944a02b0129ddeda5b",
+      "queueing_lab/hardware.py": "290779f99b62a5f9bb559d12810e9cca87ddb3666ded72fb34dc2af258793b84",
+      "queueing_lab/hardware_report.py": "2d20650283194967aba44cdfdff050eb5187f4b39538d873bfa06711391d1308",
+      "queueing_lab/metrics.py": "671792ab80553af6760f3c6e26346f987039f98291ea5a43bed4e16db639d0b2",
+      "queueing_lab/model.py": "b2ec4993bdbe0f54bd2766ebfb6a87beae03255f702540a0b461fadf7154259c",
+      "queueing_lab/network.py": "a9629222520deda819c757a6f9170f1d490352788da53f2d1d227c6328429e56",
+      "queueing_lab/policies.py": "4db7ee2fc849e5156d949177b4e767a69fcf84a2fea4e63922cbb53e63078cac",
+      "queueing_lab/provenance.py": "ca34cf8339148b6fc94b9ae7d60e7ae463133f54033ddeaaeba3621cbe937884",
+      "queueing_lab/report.py": "1c56042f1e76eee270d8bbecf225109de35e0cd4daeb05e3b037148765941ae2",
+      "queueing_lab/runtime.py": "4be1dd8672b6afcd951c54ed8dc8953871bff8e0b17963d1c0bb226801e7e786",
+      "queueing_lab/simulator.py": "399a0218172367d0799ea046103c1b81cb967915c106058fd6b745b0536d01b5",
+      "queueing_lab/workload.py": "78ea66a0c91a9706419038e06fc67f6b9a0ebb1eb9392e178fbdaadaaabbc67c"
+    },
+    "git_head": null,
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]"
+  },
+  "qualification": "Complete/correct outputs; >=5% gain in TTFT or burst throughput, no >2% response/TTFT/p99-gap loss against both baseline and shortest in every held-out cell; costs reported even if gate fails.",
+  "requests": 64,
+  "screen_seed": 20262001,
+  "stage_order": [
+    "fixed_cache_screen",
+    "reinforce_training",
+    "frozen_holdout"
+  ],
+  "training_seeds": [
+    20262101,
+    20262102
+  ],
+  "training_updates": 6
+}

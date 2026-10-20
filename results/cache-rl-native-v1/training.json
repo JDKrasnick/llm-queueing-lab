@@ -1,0 +1,322 @@
+{
+  "episodes": [
+    {
+      "decisions": 71,
+      "iteration": 0,
+      "job": {
+        "blocks": 128,
+        "family": "no_prefix",
+        "id": 36,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.049676576570575726
+    },
+    {
+      "decisions": 78,
+      "iteration": 0,
+      "job": {
+        "blocks": 32,
+        "family": "churn",
+        "id": 37,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.3450347725308868
+    },
+    {
+      "decisions": 81,
+      "iteration": 0,
+      "job": {
+        "blocks": 32,
+        "family": "phase",
+        "id": 38,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.029245774536245557
+    },
+    {
+      "decisions": 73,
+      "iteration": 0,
+      "job": {
+        "blocks": 32,
+        "family": "no_prefix",
+        "id": 39,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.057731723887998965
+    },
+    {
+      "decisions": 83,
+      "iteration": 1,
+      "job": {
+        "blocks": 32,
+        "family": "reuse",
+        "id": 40,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.18352233002599339
+    },
+    {
+      "decisions": 85,
+      "iteration": 1,
+      "job": {
+        "blocks": 32,
+        "family": "phase",
+        "id": 41,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.12687470485280186
+    },
+    {
+      "decisions": 80,
+      "iteration": 1,
+      "job": {
+        "blocks": 128,
+        "family": "phase",
+        "id": 42,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": 0.046922684649559634
+    },
+    {
+      "decisions": 72,
+      "iteration": 1,
+      "job": {
+        "blocks": 32,
+        "family": "no_prefix",
+        "id": 43,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.0047801601351422085
+    },
+    {
+      "decisions": 85,
+      "iteration": 2,
+      "job": {
+        "blocks": 32,
+        "family": "phase",
+        "id": 44,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.2020568689212798
+    },
+    {
+      "decisions": 71,
+      "iteration": 2,
+      "job": {
+        "blocks": 128,
+        "family": "phase",
+        "id": 45,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.10329372720103558
+    },
+    {
+      "decisions": 83,
+      "iteration": 2,
+      "job": {
+        "blocks": 32,
+        "family": "churn",
+        "id": 46,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.017733034309176183
+    },
+    {
+      "decisions": 76,
+      "iteration": 2,
+      "job": {
+        "blocks": 32,
+        "family": "reuse",
+        "id": 47,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.15847096039491476
+    },
+    {
+      "decisions": 77,
+      "iteration": 3,
+      "job": {
+        "blocks": 32,
+        "family": "churn",
+        "id": 48,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.3189651481684159
+    },
+    {
+      "decisions": 69,
+      "iteration": 3,
+      "job": {
+        "blocks": 128,
+        "family": "churn",
+        "id": 49,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.4011235351986263
+    },
+    {
+      "decisions": 73,
+      "iteration": 3,
+      "job": {
+        "blocks": 32,
+        "family": "no_prefix",
+        "id": 50,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.4413523681085283
+    },
+    {
+      "decisions": 68,
+      "iteration": 3,
+      "job": {
+        "blocks": 128,
+        "family": "reuse",
+        "id": 51,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.26690684752318256
+    },
+    {
+      "decisions": 69,
+      "iteration": 4,
+      "job": {
+        "blocks": 128,
+        "family": "churn",
+        "id": 52,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.35599308322963463
+    },
+    {
+      "decisions": 74,
+      "iteration": 4,
+      "job": {
+        "blocks": 128,
+        "family": "reuse",
+        "id": 53,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.01963785735219785
+    },
+    {
+      "decisions": 75,
+      "iteration": 4,
+      "job": {
+        "blocks": 32,
+        "family": "reuse",
+        "id": 54,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": -0.07236300282305759
+    },
+    {
+      "decisions": 72,
+      "iteration": 4,
+      "job": {
+        "blocks": 32,
+        "family": "no_prefix",
+        "id": 55,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.21187906220178465
+    },
+    {
+      "decisions": 71,
+      "iteration": 5,
+      "job": {
+        "blocks": 128,
+        "family": "phase",
+        "id": 56,
+        "mode": "rl_train",
+        "seed": 20262101,
+        "stage": "training"
+      },
+      "return_value": 0.029223008996879362
+    },
+    {
+      "decisions": 83,
+      "iteration": 5,
+      "job": {
+        "blocks": 32,
+        "family": "churn",
+        "id": 57,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.0037309160205645274
+    },
+    {
+      "decisions": 67,
+      "iteration": 5,
+      "job": {
+        "blocks": 128,
+        "family": "no_prefix",
+        "id": 58,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.17233465923287433
+    },
+    {
+      "decisions": 72,
+      "iteration": 5,
+      "job": {
+        "blocks": 128,
+        "family": "churn",
+        "id": 59,
+        "mode": "rl_train",
+        "seed": 20262102,
+        "stage": "training"
+      },
+      "return_value": -0.005859680289118104
+    }
+  ],
+  "reference_mode": "shortest",
+  "reference_scores": {
+    "baseline": 2.7490332578329517,
+    "cache": 2.5429017520685058,
+    "shortest": 2.524278854581059
+  }
+}
