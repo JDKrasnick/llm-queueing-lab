@@ -35,7 +35,7 @@ change (%) = 100 × [(1−x) × (−526.46) + x × 77.25]
                   / [(1−x) × 1,159.73 + x × 1,281.64]
 ```
 
-At `x = 12.0%`, this gives **about 38.7% lower mean wait**, **if the measured class delays stayed fixed**. This is an illustrative two-class projection: it maps the middle group to the shorter class, uses different tokenizers, and does not model how a new mix changes queueing. The measured overall reduction in our actual mix is **10.5%**; establishing the projected gain requires replaying the real trace. [Counts, assumptions and reproduction](docs/PROMPT_MIX.md).
+At `x = 12.0%`, this gives **about 38.7% lower mean wait**, **if the measured class delays stayed fixed**. This is an illustrative two-class projection: it maps the middle group to the shorter class, uses different tokenizers, and does not model how a new mix changes queueing. [Counts, assumptions and reproduction](docs/PROMPT_MIX.md).
 
 **Shorter prompts started about 527 ms sooner.** KV blocks measure available cache capacity; burst throughput does not establish sustainable serving capacity.
 
