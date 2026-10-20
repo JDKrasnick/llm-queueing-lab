@@ -1,0 +1,74 @@
+{
+  "source_url": "https://raw.githubusercontent.com/HPMLL/BurstGPT/d895a53bb7b8ec137d0d2fe203b335835a78c10a/data/BurstGPT_1.csv",
+  "source_revision": "d895a53bb7b8ec137d0d2fe203b335835a78c10a",
+  "source_sha256": "46fc9480ef0b748ecb2b51d512ff08c196b031782cbe6f78e28044d768e86d5a",
+  "analysis_sha256": "d0c0d1a90c6153e5728828a31eb75d3b5c1275c07abb7da46a0aa8ffb80aa518",
+  "counts": {
+    "rows": 1429737,
+    "zero_input_tokens": 25427,
+    "positive_input_tokens": 1404310,
+    "le_769": 1051791,
+    "from_770_to_1536": 184362,
+    "ge_1537": 168157
+  },
+  "percent_of_positive_input_requests": {
+    "le_769": 74.89735172433437,
+    "from_770_to_1536": 13.128297882946073,
+    "ge_1537": 11.974350392719556
+  },
+  "services": {
+    "Conversation log": {
+      "positive_input_tokens": 145717,
+      "ge_1537": 22248
+    },
+    "API log": {
+      "positive_input_tokens": 1258593,
+      "ge_1537": 145909
+    }
+  },
+  "measured_class_mean_ttft_ms": {
+    "baseline": {
+      "short": 1159.7292155880477,
+      "long": 1281.6432949271136
+    },
+    "coalesce": {
+      "short": 633.2650809601895,
+      "long": 1358.890171608649
+    },
+    "rl": {
+      "short": 632.8857066817966,
+      "long": 1378.7682394673118
+    }
+  },
+  "measured_test_mix": {
+    "long_fraction": 0.65625,
+    "mean_ttft_ms": {
+      "baseline": 1239.7353301543096,
+      "coalesce": 1109.456546698241,
+      "rl": 1122.371118822291
+    },
+    "pct_change_from_baseline": {
+      "coalesce": -10.508596495338473,
+      "rl": -9.466876395093971
+    }
+  },
+  "illustrative_fixed_class_effect_projection": {
+    "long_fraction": 0.11974350392719556,
+    "mean_ttft_ms": {
+      "baseline": 1174.3276346261655,
+      "coalesce": 720.153971851925,
+      "rl": 722.2002946756255
+    },
+    "pct_change_from_baseline": {
+      "coalesce": -38.675208637053125,
+      "rl": -38.50095378999319
+    }
+  },
+  "projection_is_not_a_real_trace_replay": true,
+  "projection_assumptions": [
+    "Requests below 1537 trace tokens all map to the 769-token fixture class.",
+    "Requests at or above 1537 trace tokens all map to the 1537-token fixture class.",
+    "Measured per-class waiting times remain fixed despite the new mix.",
+    "Trace and fixture tokenizers, cache behavior, outputs and arrivals are not matched."
+  ]
+}

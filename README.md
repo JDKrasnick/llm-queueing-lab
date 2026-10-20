@@ -19,13 +19,23 @@ One L4 GPU, Qwen2.5-0.5B-Instruct INT4, two held-out traces per workload/capacit
 | Metric | Cache-aware | RL | Scope / KV blocks (cache-aware; RL) |
 |---|---:|---:|---|
 | Shorter-prompt mean first-token wait | **1,160 → 633 ms (−45.4%)** | **1,160 → 633 ms (−45.4%)** | All workloads; 769-token prompts |
-| Longer-prompt mean first-token wait | 1,282 → 1,359 ms (+6.0%) | 1,282 → 1,379 ms (+7.6%) | All workloads; 1,537-token prompts |
+| Pooled mean first-token wait | **1,240 → 1,109 ms (−10.5%)** | **1,240 → 1,122 ms (−9.5%)** | All workloads; measured test mix |
 | Best mean first-token latency | **−14.1%** | **−14.3%** | Prefix reuse / 128; same |
 | Best mean completion latency | **−10.9%** | **−11.4%** | Prefix reuse / 128; same |
 | Best p99 pause between streamed tokens | **−6.0%** | **−10.8%** | Warm→cold / 32; cache churn / 32 |
 | Best burst throughput | **+6.9%** | **+5.5%** | Warm→cold / 128; cache churn / 32 |
+| Longer-prompt mean first-token wait | 1,282 → 1,359 ms (+6.0%) | 1,282 → 1,379 ms (+7.6%) | All workloads; 1,537-token prompts |
 
-**Why distinguish prompt sizes?** Serving smaller uncached jobs sooner can reduce mean waiting time while pushing longer jobs back. Our controlled mix was **34.4% shorter / 65.6% longer** (352 / 672 requests per policy), with 32 output tokens for both classes. These are relative size labels, not a production traffic estimate; whether the tradeoff is useful depends on the deployment's prompt mix and latency requirements.
+**How common are longer prompts?** In the [public BurstGPT trace](https://github.com/HPMLL/BurstGPT), we counted 1,404,310 requests with positive input-token counts: **12.0% had ≥1,537 tokens**, 13.1% had 770–1,536, and 74.9% had ≤769. This is one regional Azure service's historical first two-month trace, not all LLM traffic. Our controlled test used **65.6% longer / 34.4% shorter**, with 32 output tokens for both classes.
+
+**What would that mix imply?** Let `x` be the longer-request fraction (0–1). For cache-aware scheduling, the change in overall mean first-token wait is weighted by baseline milliseconds, not just class percentages:
+
+```text
+change (%) = 100 × [(1−x) × (−526.46) + x × 77.25]
+                  / [(1−x) × 1,159.73 + x × 1,281.64]
+```
+
+At `x = 12.0%`, this gives **about 38.7% lower mean wait**, **if the measured class delays stayed fixed**. This is an illustrative two-class projection: it maps the middle group to the shorter class, uses different tokenizers, and does not model how a new mix changes queueing. The measured overall reduction in our actual mix is **10.5%**; establishing the projected gain requires replaying the real trace. [Counts, assumptions and reproduction](docs/PROMPT_MIX.md).
 
 **Shorter prompts started about 527 ms sooner.** KV blocks measure available cache capacity; burst throughput does not establish sustainable serving capacity.
 
