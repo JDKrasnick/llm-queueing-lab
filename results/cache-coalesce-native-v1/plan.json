@@ -1,0 +1,153 @@
+{
+  "actions": [
+    "FIFO",
+    "shortest uncached prefill",
+    "exact-prefix admission coalescing"
+  ],
+  "blocks": [
+    32,
+    128
+  ],
+  "build_evidence": {
+    "archive_sha256": "4f61dcef020a6d049746fe332ed999b5911e15f35005c5820e6c03416f026898",
+    "manifest": {
+      "files": {
+        "baseline-ready.json": "d3b82f2cc6cd2576acebec6e25809598917f2e6e8f6b08264494e8166b8c86b2",
+        "baseline-source.tar.gz": "f064506d951c5487e401b8bd2a2f22724e1e212d4fc6cd39b590e68c9f5c3cb0",
+        "baseline.whl": "b32679acd52cd56ca5e98f3b59968259698b36ddc4295855444d24fa49a24d75",
+        "bootstrap.py": "0d301debdb3b8ed9213e4d07626848584a3622060cb8719421c4cef6a004e91a",
+        "build.log": "847f3f29085e3c075c0ae872fecc93c302e2199f157ef52c5852594fa7ef1d53",
+        "candidate.whl": "86fb57946f71afc9d0b790831a522310e64378e74ac9cb5af5e5d4e3e31445a1"
+      },
+      "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+      "record_type": "Retained build inputs and outputs; not a hermetic build attestation",
+      "source_revision": "3d0d6eb1327a959c54f2a41f6741ab9414e50286"
+    }
+  },
+  "canonical_trace_hash": true,
+  "cold_prefix_key_tokens": 512,
+  "episodes_per_update": 4,
+  "families": [
+    "reuse",
+    "churn",
+    "phase",
+    "no_prefix"
+  ],
+  "fixed_shortest_native_builtin": true,
+  "frozen_native_source": {
+    "manifest": {
+      "base": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+      "files": {
+        "src/config.cpp": {
+          "after": "233a3397149e8505ea7b752cbb956fd5d876ef7c8841b51cf775ce3d3298b4e7",
+          "allowed_before": [
+            "1185e21a1ad053146830c21cdf30ff9b2220c1bf9e4a3352f33c2b6281372e9f",
+            "233a3397149e8505ea7b752cbb956fd5d876ef7c8841b51cf775ce3d3298b4e7"
+          ]
+        },
+        "src/config.h": {
+          "after": "d7b184f018937d9878f942efcfb37313e6722ac25d9532b3d9d358f4dee34c71",
+          "allowed_before": [
+            "18a465dec2ff46cdbe391f5c89924dc2b52b91d5e3178af435c05ab96d2888e4",
+            "d7b184f018937d9878f942efcfb37313e6722ac25d9532b3d9d358f4dee34c71"
+          ]
+        },
+        "src/engine/research_cache_policy.h": {
+          "after": "d41cf0f835e4e95d8d04e1196d06042ca351a4f543e5f6b0dc0f0fdb885939cf",
+          "allowed_before": [
+            "589fdd9d29adbdbafc438790bee003546a976b10875ba71cb2e03304a45326ec"
+          ]
+        },
+        "src/engine/scheduler.cpp": {
+          "after": "d84b82ad18c213be360dfc36189fa2d086d8f226d16cb3f6b1c072083803bd2f",
+          "allowed_before": [
+            "1742b406babf22cf580150db64127f3593b0b5c00a182221120e33659b8ec616",
+            "9a508e84ceed90085bf869854f49b9e8514576adfeb09c09e7b79915383b45fd",
+            "b56603f632ec7539b0408fcc067eadcabe458cfe3654bbe7b68273a91bc328a6"
+          ]
+        },
+        "src/engine/scheduler.h": {
+          "after": "53fba0fde1ba714a198c2997a16fd08360387d250308cc84eb9dd4076b2cd13e",
+          "allowed_before": [
+            "53fba0fde1ba714a198c2997a16fd08360387d250308cc84eb9dd4076b2cd13e",
+            "cbc3d2efe88493c57bbc2a6dd748857f9ca0ec293a1e720b1f9cddb33c17ba50"
+          ]
+        },
+        "test/cpp/engine/dynamic_batching_config_tests.cpp": {
+          "after": "3d5e24111220359cbadcebb1c4f954fa55c3df0d558f807d9fbe2cd2098e25b8",
+          "allowed_before": [
+            "3d5e24111220359cbadcebb1c4f954fa55c3df0d558f807d9fbe2cd2098e25b8",
+            "b9df55abadb38245d0493b76f5dddf5dfa5b1fea68ab5ba2c8ee08ca17070edb"
+          ]
+        },
+        "test/cpp/engine/scheduler_contract_tests.cpp": {
+          "after": "015973fc0588cdbbbd552f9f0bfd41e316a8f0ba286b834d28d256bb7be785e0",
+          "allowed_before": [
+            "015973fc0588cdbbbd552f9f0bfd41e316a8f0ba286b834d28d256bb7be785e0",
+            "33e4abfb0d7be45a9871c99de908ca2a2a04d855d27939f1812cd35ce77a1d33"
+          ]
+        }
+      },
+      "hypothesis": "Coalesce exact queued cold prefixes until one native leader publishes reusable blocks; no outer gate."
+    },
+    "package": "/content/cache-coalesce-package",
+    "source_base": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+    "wheel_sha256": "86fb57946f71afc9d0b790831a522310e64378e74ac9cb5af5e5d4e3e31445a1"
+  },
+  "holdout_seeds": [
+    20262501,
+    20262502
+  ],
+  "horizon_s": 6,
+  "python_source": {
+    "files": {
+      "VALIDATION_REPAIRS.md": "e68b0f5a4d90d9efd139c434da8fc01d1666a14ad997d35ff9c12c1509c5b10b",
+      "cache_rl/__init__.py": "b501838fb092828d1ddbc83eec8548cef5ca6d32ba101acb128ea0ecb4ea31fc",
+      "cache_rl/analyze.py": "eb19644dd25586ebfbdbc1c4dff25f3fda1e3bc8fd40e5f3b95f31091f803f64",
+      "cache_rl/build_coalesce_gpu.py": "7ff3cb5d6ac0d33a77e8b1c4677e5d07bc627a101fd8a463e616049377713ab5",
+      "cache_rl/build_gpu.py": "35efcaa70bb32a87eeef393c82fbad4021951dba9e4f6400f81269239239801e",
+      "cache_rl/driver.py": "ac0832da038e4a3c6f141ad3fd8e1c1ac694c67ce01f0ad54ddeb8c839a4345f",
+      "cache_rl/driver_coalesce.py": "623b4ae8ea2163efbaccfe136a31611a195bb4e840600845425e2e5bdefe5afd",
+      "cache_rl/harness.py": "432f70d1b83e64ba0b8510c5ad8236c83d0e81c080ee33d5cbd7527dbb6c451f",
+      "cache_rl/learning.py": "1ed0b85a73ef56f0a26b9c322489edcd95466fdff2cfaaff6d10e50d414574c3",
+      "cache_rl/plot.py": "e176fcb9209a60c08f796adb0b466cc084d411017ed3274c7090954d9954ab84",
+      "cache_rl/retain_build.py": "d701498b574ee5325eb95a66ccd67c8beefc9f613b893edfccabc11bafde8835",
+      "cache_rl/run_coalesce_pipeline.py": "38e62a1958ace1978eedda37817f7e765a5a8f3c56db9fb5c92f59b5298c2ed9",
+      "native/coalesce-source-manifest.json": "c6442a583277e51359dc7dc9950f02bae3b1d57ced6ea2a7b8f15a1cb2542cf2",
+      "queueing_lab/__init__.py": "30273a940ce355e513c9dcf78f48076ac252d8ed7c713e4d197aee7bcf7b4380",
+      "queueing_lab/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "queueing_lab/cli.py": "d778e63b47e00b9a064822e6cb76ca3b33cbd29411787d1b694ac8b163f8ad6c",
+      "queueing_lab/experiments.py": "ea7d827a1a6efcee0ef744a9c86e24c80e0a2e85f0db07944a02b0129ddeda5b",
+      "queueing_lab/hardware.py": "5d5692b2c7484f87c34e3d8537c0a138cc4f93bd6843aa74e186f329acddf97d",
+      "queueing_lab/hardware_report.py": "1e42222461374862a30eec9304d622f033a9f767bec1bfd84202a4594db609cd",
+      "queueing_lab/metrics.py": "1634741d575b44213b3882d5e5ac1e6b3a4e12c9fe1812eec345342092aaf11c",
+      "queueing_lab/model.py": "b2ec4993bdbe0f54bd2766ebfb6a87beae03255f702540a0b461fadf7154259c",
+      "queueing_lab/network.py": "f3ce18a77feedb40c47e870b628de91b860dd85e43764b2f940ad30806375ffc",
+      "queueing_lab/policies.py": "4db7ee2fc849e5156d949177b4e767a69fcf84a2fea4e63922cbb53e63078cac",
+      "queueing_lab/provenance.py": "ca34cf8339148b6fc94b9ae7d60e7ae463133f54033ddeaaeba3621cbe937884",
+      "queueing_lab/report.py": "1c56042f1e76eee270d8bbecf225109de35e0cd4daeb05e3b037148765941ae2",
+      "queueing_lab/runtime.py": "18018373dd4aa0567efdae0f7b99af2befdc29a41224e2479abcb4c40290455d",
+      "queueing_lab/simulator.py": "399a0218172367d0799ea046103c1b81cb967915c106058fd6b745b0536d01b5",
+      "queueing_lab/validation.py": "78a0dda653270666b7047c9f8e9fe84d88363fb3c123fdeeeca00ced8543a5a9",
+      "queueing_lab/workload.py": "c529eb03b6738cfcab35a993317affdb1f68b811359f74a9653a6427d27d5d86",
+      "validation-repairs-manifest.json": "a7e85fefcaa71cc3c6e8409f4c65ad96da36965f2c9fcbd27ffc29e687869229"
+    },
+    "git_head": null,
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]"
+  },
+  "qualification": "Complete/correct outputs; >=5% gain in TTFT or burst throughput, no >2% response/TTFT/p99-gap loss against both baseline and shortest in every held-out cell; costs reported even if gate fails.",
+  "recovery_note": "Repeat after original archive was lost with expired Colab runtime. Validation fixes applied before any repeat measurements; no policy or seed retuning.",
+  "requests": 64,
+  "screen_seed": 20262301,
+  "stage_order": [
+    "fixed_cache_screen",
+    "reinforce_training",
+    "frozen_holdout"
+  ],
+  "training_seeds": [
+    20262401,
+    20262402
+  ],
+  "training_updates": 6
+}

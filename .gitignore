@@ -5,3 +5,7 @@ __pycache__/
 build/
 dist/
 results/scratch*/
+results/cache-rl-cache-screen-v1/
+results/cache-rl-trained-v1/
+results/cache-coalesce-screen-v1/
+results/cache-coalesce-trained-v1/

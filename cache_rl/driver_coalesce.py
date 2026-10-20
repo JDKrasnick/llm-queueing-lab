@@ -5,6 +5,7 @@ This burst experiment reports makespan throughput as well as fixed-window
 counts; it does not claim a sustainable arrival-rate/stability measurement.
 """
 from pathlib import Path
+import atexit
 import hashlib
 import json
 import os
@@ -28,7 +29,9 @@ def main():
     build=Path('/content/cache-coalesce-build')
     ready=json.loads((build/'ready.json').read_text())
     write_json(out/'plan.json',{'stage_order':['fixed_cache_screen','reinforce_training','frozen_holdout'],
-        'fixed_shortest_native_builtin':True,'cold_prefix_key_tokens':512,
+        'fixed_shortest_native_builtin':True,'cold_prefix_key_tokens':512,'canonical_trace_hash':True,
+        'build_evidence':json.loads((build/'build-evidence.json').read_text()),
+        'recovery_note':'Repeat after original archive was lost with expired Colab runtime. Validation fixes applied before any repeat measurements; no policy or seed retuning.',
         'families':FAMILIES,'blocks':[32,128],'horizon_s':6,'requests':64,
         'screen_seed':20262301,'training_seeds':[20262401,20262402],
         'holdout_seeds':[20262501,20262502],'training_updates':6,'episodes_per_update':4,
@@ -57,11 +60,15 @@ def main():
         job_env['CACHE_USE_BUILTIN_SHORTEST']='1'
         print('START',json.dumps(specification),flush=True)
         with (out/(name+'.log')).open('w') as stdout,(out/(name+'.stderr')).open('w') as stderr:
-            process=subprocess.run([sys.executable,'-m','cache_rl.harness','--family',family,'--blocks',str(blocks),
-                '--seed',str(seed),'--mode',mode,'--output',str(out/(name+'.json'))],env=job_env,cwd=ROOT,
-                stdout=stdout,stderr=stderr,timeout=150)
+            try:
+                process=subprocess.run([sys.executable,'-m','cache_rl.harness','--family',family,'--blocks',str(blocks),
+                    '--seed',str(seed),'--mode',mode,'--output',str(out/(name+'.json'))],env=job_env,cwd=ROOT,
+                    stdout=stdout,stderr=stderr,timeout=150)
+            except subprocess.TimeoutExpired:
+                write_json(out/(name+'-failure.json'),dict(job=specification,status='failed',phase='worker_watchdog',timeout_s=150))
+                raise
         if process.returncode:
-            write_json(out/(name+'-failure.json'),dict(job=specification,returncode=process.returncode))
+            write_json(out/(name+'-failure.json'),dict(job=specification,status='failed',phase='worker',returncode=process.returncode))
             raise RuntimeError((out/(name+'.stderr')).read_text()[-1500:])
         result=json.loads((out/(name+'.json')).read_text());result['job']=specification
         result['burst_throughput_s']=64/max(r['finish'] for r in result['requests']) if result['metrics']['completed']==64 else None
@@ -80,7 +87,12 @@ def main():
             for name in ('ready.json','full-tests.xml','focused-tests.xml','full-tests.log','focused-tests.log'):
                 z.write(build/name,'build/'+name)
             z.write(ROOT/'native/coalesce-source-overlay.zip','build/source-overlay.zip')
-        print('CHECKPOINT',label,path.stat().st_size,hashlib.sha256(path.read_bytes()).hexdigest(),flush=True)
+            if label=='complete':z.write('/content/cache-build-evidence.zip','build/build-evidence.zip')
+        checksum=hashlib.sha256(path.read_bytes()).hexdigest()
+        write_json(Path(str(path)+'.ready.json'),{'bytes':path.stat().st_size,'sha256':checksum})
+        print('CHECKPOINT',label,path.stat().st_size,checksum,flush=True)
+
+    atexit.register(lambda:archive('incomplete') if not (out/'complete.json').exists() else None)
 
     rng=random.Random(202610193)
     screen=[]

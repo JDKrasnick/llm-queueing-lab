@@ -7,7 +7,22 @@ change the load a scheduling policy can sustain?**
 The project contains an exact finite-action reference model, a queue-pressure
 admission policy, an actual fork/join simulator, a real-engine offered-load
 adapter, reproducible experiments and an adversarial validation handoff.
-It changes no Microsoft source and does not claim an always-on serving speedup.
+The original gated-model experiment changes no Microsoft source. A separate
+research extension now tests native cache-aware scheduling and policy-gradient
+RL; neither experiment establishes an always-on serving speedup.
+
+For the native extension, start with [the cache/RL report](CACHE_RL_REPORT.md),
+[the frozen coalescing plan](cache_rl/COALESCE_PLAN.md), and
+[independent validation instructions](VALIDATE_CACHE_RL.md). Its C++ overlays,
+GPU evidence and training logs are separate from the original gated model.
+The collected cache/coalescing and RL pilots are complete. Neither establishes
+a generally better serving scheduler; the report includes per-class and
+individual costs and the existing shortest-prefill control. See
+[validation repairs](VALIDATION_REPAIRS.md) and
+[hardware reproduction](cache_rl/REPRODUCE.md).
+The root `MANIFEST.sha256` describes the current full artifact. The original
+release manifest is preserved as `artifacts/MANIFEST-d147a49.sha256` and inside
+the unchanged `llm-queueing-lab-d147a49.zip` beside this project.
 
 ```mermaid
 flowchart LR

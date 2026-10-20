@@ -92,7 +92,7 @@ def simulate_network(config, trace, horizon, policy="fcfs", edges=((1,2), (3,), 
     records = [dict(id=j["id"], class_id=j["class_id"], arrival=j["arrival"], finish=j["finish"],
                     completed_nodes=sorted(j["done"]), launched_nodes=sorted(j["launched"])) for j in jobs.values()]
     completed = sum(r["finish"] is not None for r in records)
-    area = sum(min(r["finish"] or horizon,horizon)-r["arrival"] for r in records)
+    area = sum(min(horizon if r['finish'] is None else r['finish'],horizon)-r['arrival'] for r in records)
     return {"schema":1, "backend":"synthetic-network", "policy":policy, "edges":edges,
             "config":config.as_dict(), "trace_sha256":trace_hash(trace), "horizon_s":horizon,
             "metrics":{"offered_roots":len(records), "completed_roots":completed,

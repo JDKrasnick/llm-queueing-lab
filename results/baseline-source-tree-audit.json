@@ -1,0 +1,6 @@
+{
+  "source_revision": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+  "source_archive_sha256": "f064506d951c5487e401b8bd2a2f22724e1e212d4fc6cd39b590e68c9f5c3cb0",
+  "tracked_blobs_verified_against_git": 1311,
+  "method": "git ls-tree blob IDs compared with Git-format hashes of every tracked archive file/symlink; build dependencies and compiled output are separate evidence"
+}

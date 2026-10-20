@@ -1,0 +1,20 @@
+{
+  "status": "completed_but_uncollected_runtime_expired",
+  "evidence": "Safari Colab Cell 1 saved collector output, observed on reconnect; all three local downloads absent and new runtime paths absent. Only one active session remains. No performance claims are made from this lost run.",
+  "collector_exit_code": 0,
+  "archives": {
+    "cache-screen": {
+      "bytes": 500003,
+      "sha256": "539245359524cfd0b5953ce59516f90ca3012a2ff0ce58000c64f9f2835c584f"
+    },
+    "trained": {
+      "bytes": 970806,
+      "sha256": "f18860cf6968dec56e2120c8148b4258d1ee054c014128d1087ddab9eb72bb83"
+    },
+    "complete": {
+      "bytes": 1763011,
+      "sha256": "c07d2a969aa8f00b276ba14923d4eb3728ac29f64468ff7f88dfd5012c2da574"
+    }
+  },
+  "recovery": "Repeat exact frozen uploaded experiment bundle 3fdb011a3618e08c26cf48c0c9034c5f3b0cd0c810d6eed9cf2048c01b184d1e with unchanged source, policies and seeds. New runtime/build identities must be recorded."
+}

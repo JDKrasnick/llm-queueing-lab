@@ -6,12 +6,14 @@ import hashlib
 import json
 from pathlib import Path
 import statistics
+import re
 
 from .metrics import summarize
 from .model import Catalog, Config
 from .provenance import file_hash, write_json
 from .simulator import backlog_samples
-from .workload import trace_hash
+from .workload import trace_hash,generate
+from .validation import validate_observation
 
 
 def require(condition, message):
@@ -28,11 +30,18 @@ def analyze(directory):
     calibration=json.loads((out/'calibration.json').read_text())
     build_path=out/'baseline-build-provenance.json'
     baseline_source=None
+    provenance_level='No retained build record; source-to-wheel chain unverified'
     if build_path.exists():
         build=json.loads(build_path.read_text())
+        for label,digest,length in [('wheel',build['wheel_sha256'],64),
+                                    ('source archive',build['baseline_ready']['archive_sha256'],64),
+                                    ('source revision',build['baseline_ready']['source'],40)]:
+            require(isinstance(digest,str) and re.fullmatch('[0-9a-f]{'+str(length)+'}',digest) is not None
+                    and set(digest)!={'0'},f'Invalid recorded {label} identity')
         require(all(build['libraries'].get(name)==digest for name,digest in
                     calibration['provenance']['package_libraries'].items()),"Measured libraries differ from built baseline wheel")
         baseline_source=build['baseline_ready']['source']
+        provenance_level='Recorded manifest consistency only; baseline wheel and source archive absent from this legacy dataset'
     config=Config.from_dict(calibration['config'])
     catalog=Catalog(config,{tuple(e['action']):e['mean_s'] for e in calibration['entries']})
     require(calibration['complete'] and config==Config.from_dict(plan['config']),"Calibration/config mismatch")
@@ -41,6 +50,11 @@ def analyze(directory):
     for job in jobs:
         path=out/f"job-{job['id']:03d}.json"
         result=json.loads(path.read_text())
+        expected_policy='native' if job['arm']=='native_aa' else job['arm']
+        trace=validate_observation(result,config,plan['horizon_s'],expected_policy)
+        require(result['seed']==job['seed'] and result['rate']==job['rate'] and result['pattern']==plan.get('pattern','poisson'),'Workload semantics differ from job plan')
+        require(job['seed'] in plan['seeds'] and job['load'] in plan['loads'] and job['arm'] in plan['arms'],'Job outside frozen plan')
+        require(trace==generate(job['rate'],plan['horizon_s'],job['seed'],pattern=plan.get('pattern','poisson')),'Offered workload differs from job plan')
         require(result['backend']=='onnxruntime-genai-engine',"Not actual-engine evidence")
         require(result['calibration_sha256']==file_hash(out/'calibration.json'),"Calibration file hash mismatch")
         require(result['job']==job,"Job plan mismatch")
@@ -84,7 +98,7 @@ def analyze(directory):
                     b=base['derived_metrics'][key];c=candidate['derived_metrics'][key]
                     metrics[key]=dict(baseline=b,candidate=c,relative_pct=100*(c/b-1) if b not in (None,0) and c is not None else None)
                 pairs.append(dict(seed=seed,load=load,arm=arm,metrics=metrics))
-    summary={'jobs':len(rows),'baseline_source':baseline_source,'offered':sum(r['derived_metrics']['offered'] for r in rows),
+    summary={'jobs':len(rows),'baseline_source':baseline_source,'build_provenance':provenance_level,'offered':sum(r['derived_metrics']['offered'] for r in rows),
              'completed':sum(r['derived_metrics']['completed'] for r in rows),
              'unfinished':sum(r['derived_metrics']['unfinished'] for r in rows),
              'failed_jobs':[r['job'] for r in rows if r['status']!='observed'],
@@ -118,6 +132,7 @@ def render(out,analysis):
     fig.suptitle('Actual L4 / Qwen Engine · two traces per load · 12-second observations')
     fig.savefig(out/'hardware.png',dpi=160);plt.close(fig)
     lines=['# Actual-engine diagnostic','',analysis['interpretation'], '',
+           analysis['build_provenance'],'',
            'The native arm uses ordinary continuous admission. Both other policies impose external cohort gating. All use the same unchanged baseline binary.',
            '', '![All three policies](hardware.png)','',
            '| Load scale | Arm | Completed/s | Unfinished | Restricted response, s | Restricted TTFT, s | Observed p99 gap, ms |',

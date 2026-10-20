@@ -3,6 +3,7 @@
 Validate this extension without trusting its author's conclusions. Start with
 cache_rl/PLAN.md, cache_rl/COALESCE_PLAN.md, cache_rl/THEORY.md and the completed
 results under results/cache-rl-native-v1 and results/cache-coalesce-native-v1.
+Read VALIDATION_REPAIRS.md and the sibling independent audit REPORT.md too.
 If the coalescing dataset is not present/complete, explicitly mark it pending;
 do not infer results from its plan or from the first pilot.
 
@@ -39,6 +40,13 @@ Verify executed source hashes before comparing either with current source.
    loaded library paths and every output prefix. Preserve all unfinished/failed
    requests. Recompute burst throughput64/final completion time and distinguish
    it from sustainable arrival capacity and completed/fixed-horizon throughput.
+   Repeat the timeline, contradictory-metadata, cleanup, empty-trace and handle
+   ownership attacks from the earlier audit against the repaired package.
+   Verify retained wheel members against every measured native library, the
+   source archive revision/content and build log. The legacy datasets have
+   recorded manifest consistency only. A retained build record does not prove
+   hermetic reproducibility. Distinguish the lost coalescing run's completion
+   checksums from actual evidence collected in its corrected repeat.
 7. Compare with both native baseline and shortest-prefill. In the first pilot,
    the shortest control goes through the research helper and has an age override;
    in the coalescing follow-up it uses the baseline binary's existing built-in
@@ -50,6 +58,12 @@ Verify executed source hashes before comparing either with current source.
    already has matched individual delays around1.3seconds despite better means;
    those must not disappear from the conclusion. Treat A/A variation and two
    traces per cell as limited diagnostics, not confidence bounds.
+   The corrected coalescing repeat has 77 ms mean extra TTFT for its longer
+   prompts and a 1.32 s largest individual delay; RL has 97 ms and 1.37 s.
+   Verify those class costs and all plotted cell means independently. Check
+   the A/A changes, the stronger control's seven-of-eight mean-TTFT wins, and
+   the missing matched ranking-only ablation before assigning causal credit
+   to coalescing. These are research results, not default-enablement evidence.
 9. Run pytest, native sanitizer/fuzz tests and independent counterexamples.
    Verify full/focused Engine XML counts and skip/disabled distinctions. Hardware
    experiments use only the authorized scheduling Colab notebook in Safari;

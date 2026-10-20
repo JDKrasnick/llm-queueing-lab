@@ -2,6 +2,8 @@
 
 24 short diagnostic jobs; no confidence-bounded non-regression or native-engine stability proof
 
+Recorded manifest consistency only; baseline wheel and source archive absent from this legacy dataset
+
 The native arm uses ordinary continuous admission. Both other policies impose external cohort gating. All use the same unchanged baseline binary.
 
 ![All three policies](hardware.png)

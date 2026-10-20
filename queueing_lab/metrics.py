@@ -26,8 +26,13 @@ def summarize(rows, horizon, samples):
             if r.get("token_times") and r["token_times"][0] <= horizon]
     gaps = [b-a for r in offered for a,b in zip(r.get("token_times", []), r.get("token_times", [])[1:])
             if b <= horizon]
-    residence = [min(r.get("finish") or horizon, horizon)-r["arrival"] for r in offered]
-    first_residence = [(min(r["token_times"][0],horizon) if r.get("token_times") else horizon)-r["arrival"] for r in offered]
+    def response(row):
+        finish=row.get('finish')
+        return min(horizon if finish is None else finish,horizon)-row['arrival']
+    def first_response(row):
+        return (min(row['token_times'][0],horizon) if row.get('token_times') else horizon)-row['arrival']
+    residence = [response(r) for r in offered]
+    first_residence = [first_response(r) for r in offered]
     tail = [(t,n) for t,n in samples if horizon/2 <= t <= horizon]
     if len(tail) > 1:
         mean_t = statistics.mean(t for t,_ in tail)
@@ -42,8 +47,8 @@ def summarize(rows, horizon, samples):
         completed = [r for r in done if r["class_id"] == i]
         per_class[str(i)] = {"offered": len(subset), "completed": len(completed),
             "unfinished": len(subset)-len(completed),
-            "restricted_mean_response_s": statistics.mean(min(r.get("finish") or horizon, horizon)-r["arrival"] for r in subset),
-            "restricted_mean_ttft_s":statistics.mean((r["token_times"][0] if r.get("token_times") else horizon)-r["arrival"] for r in subset)}
+            "restricted_mean_response_s": statistics.mean(response(r) for r in subset),
+            "restricted_mean_ttft_s":statistics.mean(first_response(r) for r in subset)}
     return {"offered": len(offered), "completed": len(done), "unfinished": len(offered)-len(done),
         "completion_rate_s": len(done)/horizon,
         "restricted_mean_response_s": statistics.mean(residence) if residence else None,

@@ -38,8 +38,6 @@ def trace_hash(rows):
 
 
 def validate_trace(rows, classes):
-    if not rows:
-        raise ValueError("Empty arrival trace")
     ids = set()
     last = -1.0
     for row in rows:

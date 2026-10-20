@@ -1,0 +1,88 @@
+{
+  "verified_at_utc": "2026-10-20T04:19:37.473194+00:00",
+  "local_tests_passed": 56,
+  "native_cpp": {
+    "commit": "fd7b66a",
+    "source_base": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+    "focused_passed": 48,
+    "full_passed": 927,
+    "full_skipped": 1,
+    "full_disabled": 4,
+    "standalone_sanitizers": [
+      "address",
+      "undefined"
+    ],
+    "random_states": 2000
+  },
+  "python_wheel": {
+    "path": "artifacts/llm_queueing_lab-0.2.0-py3-none-any.whl",
+    "sha256": "52a01890289165005070ae1e1b9f14fd62f9cc57296c9195ce4c7836991338ae",
+    "source_members_verified": 28,
+    "installed_smoke_capacity_requests_s": 28.821807732602796
+  },
+  "ranking_pilot": {
+    "jobs": 124,
+    "offered": 7936,
+    "completed": 7936,
+    "paired_output_comparisons": 4352,
+    "native_rl_decisions": 1808,
+    "replay": {
+      "all_measured_returns_match": true,
+      "all_saved_weights_match": true,
+      "episodes_replayed": 24,
+      "frozen_actor_matches": true,
+      "native_steps": 1808,
+      "train_holdout_seeds_disjoint": true,
+      "updates_reproduced": 6
+    }
+  },
+  "coalescing_repeat": {
+    "archive_sha256": "c2bfd704bc4c8557ffd2ce70f7e7a54d980652d8e53c153d60f9ade04af5cf69",
+    "jobs": 124,
+    "offered": 7936,
+    "completed": 7936,
+    "paired_output_comparisons": 4352,
+    "output_mismatches": 0,
+    "failed_jobs": 0,
+    "native_rl_decisions": 1818,
+    "replayed_episodes": 24,
+    "updates_reproduced": 6,
+    "native_source_files_verified": {
+      "native": 7,
+      "python": 30
+    },
+    "current_measurement_training_build_files_match_executed_snapshot": 11,
+    "build_provenance": {
+      "archive_sha256": "4f61dcef020a6d049746fe332ed999b5911e15f35005c5820e6c03416f026898",
+      "level": "retained source archive, build log and wheels; measured library hashes verified",
+      "limit": "Build record consistency, not an independent hermetic rebuild or attestation",
+      "source_revision": "3d0d6eb1327a959c54f2a41f6741ab9414e50286"
+    },
+    "baseline_cost_flags": {
+      "coalesce": 6,
+      "rl": 9
+    },
+    "shortest_cost_flags": {
+      "coalesce": 11,
+      "rl": 12
+    },
+    "predeclared_qualification_passed": false
+  },
+  "source_tree": {
+    "source_revision": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+    "source_archive_sha256": "f064506d951c5487e401b8bd2a2f22724e1e212d4fc6cd39b590e68c9f5c3cb0",
+    "tracked_blobs_verified_against_git": 1311,
+    "method": "git ls-tree blob IDs compared with Git-format hashes of every tracked archive file/symlink; build dependencies and compiled output are separate evidence"
+  },
+  "limits": [
+    "One GPU/model; two held-out traces per cell; burst workloads only",
+    "Build-record consistency is not hermetic attestation",
+    "Missing matched ranking-only ablation in second pilot",
+    "Material class and individual latency costs; default enablement unsupported",
+    "Lost coalescing run excluded; surviving checksums retained separately"
+  ],
+  "original_release_archive": {
+    "path": "../llm-queueing-lab-d147a49.zip",
+    "sha256": "fe9d27005a86d7ca5e0c94f04f8d85ef100d18694cd21299ad1754759cce307e"
+  }
+}

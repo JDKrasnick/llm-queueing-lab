@@ -7,11 +7,13 @@ from pathlib import Path
 import random
 import sys
 import time
+import traceback
 
 from queueing_lab.hardware import GenAISession
 from queueing_lab.model import Config,RequestClass
 from queueing_lab.provenance import write_json
 from queueing_lab.runtime import run_live
+from queueing_lab.workload import trace_hash
 
 
 class CacheSession(GenAISession):
@@ -24,9 +26,14 @@ class CacheSession(GenAISession):
         count=row.get('max_new',32)
         options=self.og.RequestOptions();options.set_max_session_tokens(len(tokens)+64)
         request=self.engine.create_request(options=options)
-        turn=self.og.TurnOptions(request)
-        turn.set_max_generated_tokens(count);turn.set_min_generated_tokens(count);turn.set_do_sample(False)
-        request.begin_turn(self.np.asarray(tokens,dtype=self.np.int32),turn)
+        try:
+            turn=self.og.TurnOptions(request)
+            turn.set_max_generated_tokens(count);turn.set_min_generated_tokens(count);turn.set_do_sample(False)
+            request.begin_turn(self.np.asarray(tokens,dtype=self.np.int32),turn)
+        except Exception as exc:
+            try:self.close(request)
+            except Exception as cleanup:exc.add_note(f'Request cleanup failed: {cleanup}')
+            raise
         self.request_ids[request]=row.get('id')
         return request
 
@@ -47,6 +54,7 @@ class CacheSession(GenAISession):
 
 
 def run(args):
+    if Path(args.output).exists():raise FileExistsError('Run output already exists')
     config=Config(classes=(RequestClass('long',1537,32,64),RequestClass('short',769,32,64)),
                   rows=16,blocks=args.blocks,block_size=256)
     session=CacheSession('/content/planner-qwen-paged',config,prefix_caching=True,
@@ -61,13 +69,15 @@ def run(args):
     for group in range(2):
         req=session.submit(dict(class_id=0,input_tokens=prefixes[group]+fill[:1],max_new=1))
         deadline=time.perf_counter()+30
-        while True:
-            if time.perf_counter()>deadline:raise TimeoutError('warmup')
-            finished=False
-            for handle,kind,token in session.step():
-                if kind=='failed':raise RuntimeError(token)
-                if kind=='finish':session.close(handle);finished=True
-            if finished:break
+        try:
+            while True:
+                if time.perf_counter()>deadline:raise TimeoutError('warmup')
+                finished=False
+                for handle,kind,token in session.step():
+                    if kind=='failed':raise RuntimeError(token)
+                    if kind=='finish':finished=True
+                if finished:break
+        finally:session.close(req)
     rng=random.Random(args.seed)
     rows=[]
     for i in range(64):
@@ -88,6 +98,8 @@ def run(args):
     print('CACHE_MEASUREMENT_START',file=sys.stderr,flush=True)
     cpu=time.process_time()
     result=run_live(session,config,rows,args.horizon,'native')
+    result['input_trace_sha256']=result['trace_sha256']
+    result['trace_sha256']=trace_hash([{k:r[k] for k in ('id','arrival','class_id')} for r in rows])
     result['host_cpu_s']=time.process_time()-cpu
     result.update(family=args.family,seed=args.seed,blocks=args.blocks,mode=args.mode,provenance=session.provenance)
     # Payload identity is checked separately from the offered-time/class hash.
@@ -105,4 +117,11 @@ if __name__=='__main__':
     parser.add_argument('--seed',type=int,required=True);parser.add_argument('--blocks',type=int,required=True)
     parser.add_argument('--mode',required=True);parser.add_argument('--output',required=True)
     parser.add_argument('--horizon',type=float,default=6)
-    run(parser.parse_args())
+    args=parser.parse_args()
+    try:run(args)
+    except Exception as exc:
+        if not Path(args.output).exists():
+            write_json(args.output,{'status':'failed','phase':'before_complete_observation',
+                'family':args.family,'blocks':args.blocks,'seed':args.seed,'mode':args.mode,
+                'error':f'{type(exc).__name__}: {exc}','traceback':traceback.format_exc()})
+        raise

@@ -1,5 +1,6 @@
 {
   "baseline_source": "3d0d6eb1327a959c54f2a41f6741ab9414e50286",
+  "build_provenance": "Recorded manifest consistency only; baseline wheel and source archive absent from this legacy dataset",
   "catalog_monotone": true,
   "completed": 3771,
   "failed_jobs": [],

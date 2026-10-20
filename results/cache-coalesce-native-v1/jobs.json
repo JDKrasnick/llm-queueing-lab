@@ -1,0 +1,994 @@
+[
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 0,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 1,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 2,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 3,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 4,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 5,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 6,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 7,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 8,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 9,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 10,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 11,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 12,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 13,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 14,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 15,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 16,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 17,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 18,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 19,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 20,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 21,
+    "mode": "coalesce",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 22,
+    "mode": "baseline",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 23,
+    "mode": "shortest",
+    "seed": 20262301,
+    "stage": "cache_screen"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 24,
+    "mode": "off",
+    "seed": 20262301,
+    "stage": "identity_control"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 25,
+    "mode": "baseline_aa",
+    "seed": 20262301,
+    "stage": "identity_control"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 26,
+    "mode": "off",
+    "seed": 20262301,
+    "stage": "identity_control"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 27,
+    "mode": "baseline_aa",
+    "seed": 20262301,
+    "stage": "identity_control"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 28,
+    "mode": "shortest",
+    "seed": 20262401,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 29,
+    "mode": "shortest",
+    "seed": 20262401,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 30,
+    "mode": "shortest",
+    "seed": 20262402,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 31,
+    "mode": "shortest",
+    "seed": 20262402,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 32,
+    "mode": "shortest",
+    "seed": 20262401,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 33,
+    "mode": "shortest",
+    "seed": 20262401,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 34,
+    "mode": "shortest",
+    "seed": 20262402,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 35,
+    "mode": "shortest",
+    "seed": 20262402,
+    "stage": "training_reference"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 36,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 37,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 38,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 39,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 40,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 41,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 42,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 43,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 44,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 45,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 46,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 47,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 48,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 49,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 50,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 51,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 52,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 53,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 54,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 55,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 56,
+    "mode": "rl_train",
+    "seed": 20262401,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 57,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 58,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 59,
+    "mode": "rl_train",
+    "seed": 20262402,
+    "stage": "training"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 60,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 61,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 62,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 63,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 64,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 65,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 66,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 67,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 68,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 69,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 70,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 71,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 72,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 73,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 74,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 75,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 76,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 77,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 78,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 79,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 80,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 81,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 82,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 83,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 84,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 85,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 86,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 87,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 88,
+    "mode": "coalesce",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 89,
+    "mode": "shortest",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 90,
+    "mode": "rl",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 91,
+    "mode": "baseline",
+    "seed": 20262501,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 92,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 93,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 94,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "reuse",
+    "id": 95,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 96,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 97,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 98,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "reuse",
+    "id": 99,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 100,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 101,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 102,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "churn",
+    "id": 103,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 104,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 105,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 106,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "churn",
+    "id": 107,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 108,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 109,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 110,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "phase",
+    "id": 111,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 112,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 113,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 114,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "phase",
+    "id": 115,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 116,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 117,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 118,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 32,
+    "family": "no_prefix",
+    "id": 119,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 120,
+    "mode": "shortest",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 121,
+    "mode": "baseline",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 122,
+    "mode": "rl",
+    "seed": 20262502,
+    "stage": "holdout"
+  },
+  {
+    "blocks": 128,
+    "family": "no_prefix",
+    "id": 123,
+    "mode": "coalesce",
+    "seed": 20262502,
+    "stage": "holdout"
+  }
+]

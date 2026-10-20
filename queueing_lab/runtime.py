@@ -6,6 +6,7 @@ explicitly labeled; they are never reported as real-engine measurements.
 """
 
 import time
+import math
 
 from .metrics import summarize
 from .policies import pop_action, select
@@ -15,7 +16,7 @@ from .workload import trace_hash, validate_trace
 
 def run_live(session, config, trace, horizon, policy, catalog=None, clock=time.perf_counter, sleep=time.sleep):
     validate_trace(trace,len(config.classes))
-    if horizon <= 0 or policy not in ("native", "fcfs", "pressure"):
+    if not math.isfinite(horizon) or horizon <= 0 or policy not in ("native", "fcfs", "pressure"):
         raise ValueError("Invalid live run")
     if policy != "native" and catalog is None:
         raise ValueError("Cohort admission requires a frozen service catalog")
@@ -34,6 +35,8 @@ def run_live(session, config, trace, horizon, policy, catalog=None, clock=time.p
         while clock()-start < horizon:
             now = clock()-start
             while cursor < len(records) and records[cursor]["arrival"] <= now:
+                if clock()-start >= horizon:
+                    break
                 row = records[cursor]
                 cursor += 1
                 if policy == "native":
@@ -43,12 +46,18 @@ def run_live(session, config, trace, horizon, policy, catalog=None, clock=time.p
             if policy != "native" and not active and pending:
                 action = select(policy,pending,catalog)
                 for row in pop_action(pending,action):
+                    if clock()-start >= horizon:
+                        break
                     submit(row,clock()-start)
+            if clock()-start >= horizon:
+                break
             if active:
                 events = session.step()
                 stamp = clock()-start
                 polls += 1
                 for handle,kind,token in events:
+                    if kind not in ('blocked','failed','token','finish'):
+                        raise RuntimeError(f'Unknown event kind: {kind}')
                     if kind == "blocked":
                         blocked += 1
                         continue
@@ -87,6 +96,8 @@ def run_live(session, config, trace, horizon, policy, catalog=None, clock=time.p
                 session.close(handle)
             except Exception as exc:
                 cleanup_errors.append(str(exc))
+        if cleanup_errors and failure is None:
+            failure='Request cleanup failed: '+'; '.join(cleanup_errors)
     samples = backlog_samples(records,horizon,0.1)
     return {"schema":1,"backend":session.label,"policy":policy,"config":config.as_dict(),
             "horizon_s":horizon,"trace_sha256":trace_hash(trace),"requests":records,"backlog":samples,

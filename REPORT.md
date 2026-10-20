@@ -111,10 +111,12 @@ calibrated on hardware. Each measured job uses a fresh process and a 12-second
 offered-arrival trace; there are two traces per load and randomized native,
 native A/A, gated FCFS and pressure arms.
 
-The baseline source is `3d0d6eb1327a959c54f2a41f6741ab9414e50286`.
-Every measured GenAI library matches the corresponding file inside the built
-baseline wheel byte-for-byte; its SHA256 and build metadata are retained in
-`baseline-build-provenance.json` beside the calibration.
+The recorded baseline source is `3d0d6eb1327a959c54f2a41f6741ab9414e50286`.
+Measured library hashes agree with `baseline-build-provenance.json`, which also
+records a wheel hash and build metadata. This legacy artifact omits the wheel
+and source archive, so that agreement establishes manifest consistency rather
+than an independently verified source-to-wheel chain. The native cache/RL repeat
+retains those build inputs and outputs separately.
 
 The following are means of the two traces. Rate scales refer to the empirical
 **gated** service catalog, not native continuous-batching capacity.

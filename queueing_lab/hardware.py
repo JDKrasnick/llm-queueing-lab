@@ -9,6 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 import statistics
+import sys
 import tempfile
 import time
 
@@ -78,11 +79,16 @@ class GenAISession:
         options = self.og.RequestOptions()
         options.set_max_session_tokens(c.prompt_tokens+c.output_bound)
         request = self.engine.create_request(options=options)
-        turn = self.og.TurnOptions(request)
-        turn.set_max_generated_tokens(c.output_tokens)
-        turn.set_min_generated_tokens(c.output_tokens)
-        turn.set_do_sample(False)
-        request.begin_turn(self.prompts[row["class_id"]],turn)
+        try:
+            turn = self.og.TurnOptions(request)
+            turn.set_max_generated_tokens(c.output_tokens)
+            turn.set_min_generated_tokens(c.output_tokens)
+            turn.set_do_sample(False)
+            request.begin_turn(self.prompts[row["class_id"]],turn)
+        except Exception as exc:
+            try:self.close(request)
+            except Exception as cleanup:exc.add_note(f'Request cleanup failed: {cleanup}')
+            raise
         return request
 
     def step(self):
@@ -119,15 +125,22 @@ class GenAISession:
                     if kind == "token":
                         active[handle][1].append(int(token))
                     if kind == "finish":
-                        i,tokens = active.pop(handle)
+                        i,tokens = active[handle]
                         if len(tokens) != self.config.classes[i].output_tokens:
                             raise RuntimeError("Calibration output count mismatch")
                         hashes.append({"class_id":i,"output_sha256":hashlib.sha256(json.dumps(tokens).encode()).hexdigest()})
                         self.close(handle)
+                        del active[handle]
             return time.perf_counter()-start,hashes
         finally:
+            cleanup_errors=[]
             for handle in active:
-                self.close(handle)
+                try:self.close(handle)
+                except Exception as exc:cleanup_errors.append(str(exc))
+            if cleanup_errors:
+                error=RuntimeError('Calibration cleanup failed: '+'; '.join(cleanup_errors))
+                if sys.exception() is not None:sys.exception().add_note(str(error))
+                else:raise error
 
 
 def calibrate(model,config,output,reps=3,provider="cuda"):

@@ -1,4 +1,11 @@
 {
+  "archived_sources_verified": {
+    "native": 7,
+    "python": 21
+  },
+  "build_provenance": {
+    "level": "recorded manifest consistency only; wheels/source archive absent"
+  },
   "builtin_shortest_control": false,
   "complete_paired_outputs": 4352,
   "completed": 7936,
