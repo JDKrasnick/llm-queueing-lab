@@ -8,36 +8,26 @@ An LLM server must share GPU compute and memory between incoming prompts and ong
 
 We started from a pinned fork of Microsoft's open-source [ONNX Runtime GenAI](https://github.com/microsoft/onnxruntime-genai), rebuilt its native C++ scheduler, and tested changes inside the real Engine. All percentages use the frozen fork's normal configuration as baseline ([source snapshot](native/coalesce-source-manifest.json), `3d0d6eb`), with the same model, request traces and resource budgets.
 
-Queueing models describe compute and KV-cache limits. The prototype orders requests by uncached work and cache demand, lets one request compute a shared cold prefix before its duplicates, and trains a small RL actor to choose between scheduling rules.
-
-The cache-aware path below is one of the rules RL can select, alongside FIFO and shortest-prefill:
-
-```mermaid
-flowchart LR
-    Q["Queue + KV-cache state"] --> P["Order by uncached work<br/>and cache demand"]
-    P --> C["Shared cold prefix:<br/>one leader, then reuse"]
-    C --> A["Existing allocator<br/>and GPU execution"]
-```
+- **Queue-aware ordering:** favor requests with less uncached prompt work, so smaller jobs spend less time behind expensive ones. Waiting age can override that preference.
+- **Cache-aware scheduling:** consider KV-memory demand and prefix reuse. When queued requests share an uncached prefix, let one compute it first so the others can reuse its cached state.
+- **RL:** train a small actor to choose FIFO, shortest-prefill or the cache-aware rule from the observed queue/cache state. The existing allocator still decides what fits.
 
 ## Results
 
-One L4 GPU, Qwen2.5-0.5B-Instruct INT4, two held-out traces per workload/capacity setting. Compared with normal repository code:
+One L4 GPU, Qwen2.5-0.5B-Instruct INT4, two held-out traces per workload/capacity setting. All changes compare with the frozen baseline. Class means cover all workloads; the other rows select each policy's best workload, not one simultaneous win.
 
-**Shorter prompts received their first token about 527 ms sooner (−45.4%)** across all held-out workloads. The corresponding longer-prompt cost is visible below:
-
-| Mean first-token wait, all workloads | Baseline | Cache-aware | RL |
-|---|---:|---:|---:|
-| Shorter prompts (769 tokens) | 1,160 ms | **633 ms (−45.4%)** | **633 ms (−45.4%)** |
-| Longer prompts (1,537 tokens) | 1,282 ms | 1,359 ms (+6.0%) | 1,379 ms (+7.6%) |
-
-The strongest workload-specific gains follow. Peaks come from different workloads, not one simultaneous win; KV blocks measure available cache capacity. Burst throughput does not establish sustainable serving capacity.
-
-| Best measured metric | Cache-aware | RL | Workload / KV blocks (cache-aware; RL) |
+| Metric | Cache-aware | RL | Scope / KV blocks (cache-aware; RL) |
 |---|---:|---:|---|
-| Mean first-token latency | **−14.1%** | **−14.3%** | Prefix reuse / 128; same |
-| Mean completion latency | **−10.9%** | **−11.4%** | Prefix reuse / 128; same |
-| p99 pause between streamed tokens | **−6.0%** | **−10.8%** | Warm→cold / 32; cache churn / 32 |
-| Burst throughput | **+6.9%** | **+5.5%** | Warm→cold / 128; cache churn / 32 |
+| Shorter-prompt mean first-token wait | **1,160 → 633 ms (−45.4%)** | **1,160 → 633 ms (−45.4%)** | All workloads; 769-token prompts |
+| Longer-prompt mean first-token wait | 1,282 → 1,359 ms (+6.0%) | 1,282 → 1,379 ms (+7.6%) | All workloads; 1,537-token prompts |
+| Best mean first-token latency | **−14.1%** | **−14.3%** | Prefix reuse / 128; same |
+| Best mean completion latency | **−10.9%** | **−11.4%** | Prefix reuse / 128; same |
+| Best p99 pause between streamed tokens | **−6.0%** | **−10.8%** | Warm→cold / 32; cache churn / 32 |
+| Best burst throughput | **+6.9%** | **+5.5%** | Warm→cold / 128; cache churn / 32 |
+
+**Why distinguish prompt sizes?** Serving smaller uncached jobs sooner can reduce mean waiting time while pushing longer jobs back. Our controlled mix was **34.4% shorter / 65.6% longer** (352 / 672 requests per policy), with 32 output tokens for both classes. These are relative size labels, not a production traffic estimate; whether the tradeoff is useful depends on the deployment's prompt mix and latency requirements.
+
+**Shorter prompts started about 527 ms sooner.** KV blocks measure available cache capacity; burst throughput does not establish sustainable serving capacity.
 
 **What worked:** request ordering reduced average latency; coalescing increased observed prefix reuse in some workloads. **RL did not establish an advantage over the fork's existing shortest-prefill option**, which beat each prototype on mean first-token latency in 7/8 cells.
 
